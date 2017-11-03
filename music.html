@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>播放器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .music{
+            margin: 50px;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            background-color: red;
+            border-radius: 50%;
+            border: none;
+            transition: all 1s;
+            overflow: hidden;
+        }
+
+        .musicRect{
+            border-radius: 5px;
+            width: 300px;
+            transition: all 1s;
+            overflow: hidden;
+            outline: none;
+            border: none;
+            /*animation: animate 2s;*/
+        }
+        @keyframes animate {
+            form{
+                width: 50px;
+            }
+            to{
+                width: 200px;
+            }
+        }
+        p{
+            width: 100px;
+            height: 100px;
+        }
+        #p{
+            background-color: red;
+        }
+        .classA{
+            background-color: grey;
+        }
+        #p.classB.classA{
+            background-color: yellow;
+        }
+        p.classA.classB{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<p class="classA classB" id="p"></p>
+<audio src=""></audio>
+<div class="music">
+    <span></span>
+    <i></i>
+
+</div>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+    $('.music').on('click',function () {
+        $(this).toggleClass('musicRect');
+    })
+</script>
+</body>
+</html>

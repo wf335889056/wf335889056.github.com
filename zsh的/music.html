@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="music.css">
+</head>
+<body>
+<div class="amaz">
+    <div id="musicplayer">
+        <div id="aaa">
+            <audio src="./music/Be With you.mp3" id="music"></audio>
+        </div>
+        <div id="controller">
+            <div id="paly">
+                <a href="javascript:;" id="play_pause_btn">
+                    <img src="music.jpg" alt=""></a>
+            </div>
+            <div id="meg">
+                <span id="music_name"></span>
+                <span id="music_time"></span>
+            </div>
+            <div id="progresscontrol">
+                <progress id="music_progress" value="0" max="100"></progress>
+                <span id="voice_tb">Vol:50%</span>
+                <progress id="voice" value="50" max="100"></progress>
+            </div>
+        </div>
+        <div class="songs">
+            <span class="song">Be With you</span>
+            <span class="song">Beauty</span>
+            <span class="song">The Party Troll</span>
+            <span class="song">Reign</span>
+            <span class="song">Time</span>
+            <span class="song">Survivor</span>
+        </div>
+        <div class="tusiji">
+            <img src="music/dou.gif" alt="">
+            <img src="music/dou.gif" alt="">
+        </div>
+    </div>
+</div>
+<script src="player.js"></script>
+</body>
+</html>
