@@ -1,0 +1,14 @@
+angular.module('app')
+	.directive('setFocus',function($timeout){
+		return{
+			link:function(scope,ele,attr){
+				scope.$watch(attr.setFocus,function(newVal,oldVal){
+					if(newVal){
+						$timeout(function(){
+							ele[0].focus();
+						},0);
+					}
+				})
+			}
+		}
+	})

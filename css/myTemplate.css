@@ -1,0 +1,128 @@
+.myTemplate p, .beginner p{
+			width: 220px;
+			height: 30px;
+			background-color: rgba(0,0,0,0.7);
+			margin: 20px;
+			padding: 0 10px;
+			color: #fff;
+			border-radius: 5px;
+			line-height: 30px;
+			box-shadow: 2px 2px 5px #666;
+		}
+		/*.myTemplate p span, .beginner p span{*/
+			/*color: #32c7f7;*/
+		/*}*/
+		.myTemplate{
+			float: left;
+			width: 600px;
+		}
+		.beginner{
+			float: right;
+			width: 320px;
+		}
+		.myTemplate .blogTemplate{
+			width: 650px;
+			height: 230px;
+			/*border: 5px solid #fff;*/
+			/*border-radius: 5px;*/
+			position: relative;
+			/*overflow: hidden;*/
+		}
+		/*.myTemplate .blogTemplate span{*/
+			/*color: #666;*/
+			/*height: 60px;*/
+			/*width: 40px;*/
+			/*background-color: #fff;*/
+			/*!*border-top-right-radius: 5px;*!*/
+			/*position: absolute;*/
+			/*line-height: 60px;*/
+			/*text-align: center;*/
+			/*font-size: 40px;*/
+			/*top: 35%;*/
+			/*cursor: pointer;*/
+			/*z-index: 111;*/
+			/*color: #aaa;*/
+		/*}*/
+		/*.myTemplate .blogTemplate span:nth-of-type(1){*/
+			/*left: 0;*/
+			/*border-top-right-radius: 10px;*/
+			/*border-bottom-right-radius: 10px;*/
+		/*}*/
+		/*.myTemplate .blogTemplate span:nth-of-type(2){*/
+			/*right: 0;*/
+			/*border-top-left-radius: 10px;*/
+			/*border-bottom-left-radius: 10px;*/
+		/*}*/
+		/*.myTemplate .blogTemplate ul{*/
+			/*width: 1610px;*/
+			/*position: absolute;*/
+			/*left: 5px;*/
+			/*top: 5px;*/
+
+		/*}*/
+		.myTemplate .blogTemplate li{
+			width: 190px;
+			height: 220px;	
+			float: left;
+			margin-right: 20px;
+			background-color: #fff;
+			position: relative;
+			overflow: hidden;
+		}
+		.myTemplate .blogTemplate li>a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+		}
+		.myTemplate .blogTemplate li>a>img{
+			width: 100%;
+			height:160px;
+		}
+		.myTemplate .blogTemplate li>a>h3{
+			line-height:40px;
+			text-align: center;
+			color: #888;
+			font-weight: 500;
+		}
+		.myTemplate .blogTemplate li>a>span{
+			position: absolute;
+			bottom: -60px;
+			left: 0;
+			width: 190px;
+			height: 60px;
+			background-color: orange;
+			transition: all 0.5s linear;
+			text-align: center;
+			color: #fff;
+		}
+		.myTemplate .blogTemplate li:hover{
+			box-shadow: 0px 0px 15px #666;
+			top: -2px;
+		}
+		.myTemplate .blogTemplate li:hover>a>span{
+			bottom: 0;
+		}
+
+
+		.beginner ul{
+			padding: 0 50px 0 20px;
+		}
+		.beginner ul li{
+			
+		}
+		.beginner ul li a{
+			display: block;
+			text-decoration: none;
+			color: #686868;
+			line-height: 34px;
+			box-sizing: border-box;
+			border-bottom: 1px solid #cdcdcd;
+			padding-left: 5px;
+			border-radius: 3px;
+		}
+		
+		.beginner ul li a:hover{
+			color: #fff;
+			background-color: #6eb88c;
+		}

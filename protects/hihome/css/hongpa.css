@@ -1,0 +1,410 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+.pageContainer{
+	width: 710px;
+	margin: 0 auto;
+}
+.hongpaPage{
+	width: 100%;
+	height: 1500px;
+	background-color: #ddd;
+}
+.hongpaPage .headTitle{
+	width: 750px;
+	height: 80px;
+	background-color: #fff;
+	border-bottom: 1px solid #aaa;
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1111;
+}
+.hongpaPage .headTitle > a{
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 35px;
+	margin: 25px 0 0 20px;
+	background: url('../images/quyudingweitubiao_03.png') center center no-repeat;
+	background-size: 25px 40px;
+}
+.hongpaPage .headTitle input{
+	width: 70%;
+	height: 50px;
+	padding-left: 20px;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	float: left;
+	margin-left: 60px;
+	margin-top: 15px;
+	font-size: 24px;
+}
+
+// 区域
+.testArea{
+	width: 100%;
+}
+.hongpaPage .areaList{
+	// margin-top: 80px;
+	background-color: #fff;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	top: 80px;
+	z-index: 111;
+}
+.hongpaPage .areaList > a{
+	display: inline-block;
+	width: 120px;
+	height: 60px;
+	line-height: 60px;
+	margin: 0 50px;
+	font-size: 24px;
+	color: #686868;
+	text-decoration: none;
+}
+.hongpaPage .areaList a i{
+	font-style: normal;
+	width: 36px;
+	height: 15px;
+	line-height: 36px;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	top: 1px;
+	left: -9px;
+}
+.hongpaPage .areaList a i span{
+	text-decoration: none;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	position: absolute;
+	bottom: -15px;
+	left: -6px;
+	font-size: 30px;
+}
+.hongpaPage .areaList a i span.turnTop{
+	bottom: -29px;
+}
+
+
+// 表格
+.testTab{
+	width: 100%;
+}
+.hongpaPage .areaTab{
+	margin-top: 140px;
+	border-top: 2px solid #ddd;
+	z-index: 11;
+	width: 100%;
+	height: 400px;
+	position: fixed;
+	top: 1px;
+	left: 0;
+	overflow: hidden;
+	background-color: #fff;
+	border-bottom: 1px solid #cbcbcb;
+}
+.hongpaPage .areaTab a{
+	text-decoration: none;
+	color: #282828;
+	margin: 0;
+}
+.hongpaPage .areaTab .leftTab{
+	// float: left;
+	position: absolute;
+	width: 180px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 26px;
+	color: #282828;
+}
+.hongpaPage .areaTab .leftTab li{
+	border: 2px solid #cbcbcb;
+	margin-top: -2px;
+	line-height: 60px;
+}
+.hongpaPage .areaTab .rightTab{
+	position: absolute;
+	float: left;
+	width: 100%;
+	margin-left: 179px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 26px;
+	color: #282828;
+	text-align: left;
+	height: 400px;
+	background-color: #fff;
+	// overflow: hidden;
+	/* padding-left: 15px; */
+}
+.hongpaPage .areaTab .rightTab ul{
+	display: none;
+	margin-left: -2px;
+}
+.hongpaPage .areaTab .rightTab li{
+	border: 2px solid #cbcbcb;
+	margin-top: -2px;
+	padding-left: 15px;
+}
+.hongpaPage .areaTab .rightTab a{
+	color: #686868;
+}
+// .hongpaPage .areaTab .rightTab ul.show{
+// 	display: block;
+// }
+
+
+
+.hongpaPage .payTab{
+	width: 100%;
+	height: 400px;
+	background-color: #fff;
+	border-top: 1px solid #ddd;
+	position: fixed;
+	z-index: 11;
+	overflow: hidden;
+	margin-top: 140px;
+}
+
+.hongpaPage .payTab .payTop{
+	height: 120px;
+	width: 100%;
+	text-align: center;
+	display: flex;
+}
+.hongpaPage .payTab .payTop a{
+	display: inline-block;
+	// width: 172px;
+	height: 120px;
+	color: #282828;
+	background-color: #f2f2f2;
+	line-height: 120px;
+	text-align: center;
+	font-size: 26px;
+	text-decoration: none;
+	flex:1;
+}
+.hongpaPage .payTab .payTop a.active{
+	color: #fff;
+	background-color: #ff9914;
+}
+.hongpaPage .payTab .piceRange{
+	width: 600px;
+	height: 60px;
+	margin: 20px auto;
+	display: flex;
+}
+.hongpaPage .payTab .piceRange div:first-child input, .piceRange div:last-child input{
+	width: 120px;
+	height: 60px;
+	border: 1px solid #282828;
+	color: #dadada;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 26px;
+	// display: inline-block;
+	// float: left;
+}
+
+.hongpaPage .payTab .piceRange div:nth-of-type(2){
+	flex:1;
+	border: 1px solid #dadada;
+	height: 0px;
+	margin: 30px 55px;
+}
+
+.hongpaPage .payTab .paySure{
+	margin: 80px auto 0;
+	width: 300px;
+	height: 100px;
+	background-color: #ff9914;
+	color: #fff;
+	line-height: 100px;
+	text-align: center;
+	font-size: 30px;
+	border-radius: 10px;
+
+}
+.hongpaPage .sortTab{
+	/* margin-top: 140px; */
+	margin-top: 140px;
+	width: 100%;
+	height: 400px;
+	background-color: #fff;
+	padding-left: 30px;
+	// border-top: 1px solid #ddd;
+	position: fixed;
+	z-index: 11;
+}
+.hongpaPage .sortTab ul li{
+	line-height: 60px;
+	width: 660px;
+	font-size: 24px;
+	color: #282828;
+	padding-right: 20px;
+	border-bottom: 1px solid #ddd;
+}
+.hongpaPage .sortTab ul li:last-child{
+	border: none;
+}
+.hongpaPage .sortTab ul li.select{
+	color: #ff9914;
+}
+.hongpaPage .sortTab ul li span{
+	float: right;
+}
+.hongpaPage .mask{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	// display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 5;
+}
+
+
+
+/*slideImg*/ 
+.hongpaPage .slideImg{
+	width: 750px;
+	height: 450px;
+	/* margin-top: 80px; */
+	overflow: hidden;
+	position: relative;
+	// position: absolute;
+	// top: 80px;
+	// left: 0px;
+	// background-color: blue;
+}
+.hongpaPage .slideImg .imgUl{
+	width: 1000%;
+	height: 450px;
+	position: absolute;
+	left: 0px;
+	top: 0;
+}
+.hongpaPage .slideImg .imgUl li{
+	// width: 750px;
+	width: 10%;
+	list-style: none;
+	float: left;
+}
+.hongpaPage .slideImg .imgUl li a img{
+	// width: 750px;
+	width: 100%;
+	height: 450px;
+}
+.hongpaPage .slideImg .list{
+	width: 100px;
+	height: 15px;
+	background-color: rgba(255,255,255,0);
+	position: absolute;
+	bottom: 0;
+	top: 400px;
+	left: 50%;
+	margin-left: -50px;
+	// border-radius: 5px;
+	padding-left: 10px;
+}
+.hongpaPage .slideImg .list li{
+	float: left;
+	width: 12px;
+	height: 12px;
+	list-style: none;
+	background-color: #fff;
+	line-height: 15px;
+	border-radius: 50%;
+	margin: 0 4px;
+	text-align: center;
+	cursor: pointer;
+}
+.hongpaPage .slideImg .list li.current{
+	background-color: #ff9914;
+}
+
+
+
+/*内容*/ 
+.hongpaPage .placeContent{
+	width: 100%;
+	background-color: #fff;
+	overflow: hidden;
+	padding-bottom: 100px;
+}
+.hongpaPage .allplaceContent{
+	width: 100%;
+	height: 212px;
+	height: 242px;
+	background-color: #fff;
+	/* border-bottom: 1px solid #ddd; */
+	padding-top: 20px;
+}
+
+.hongpaPage .allplaceContent img{
+	width: 210px;
+	height: 212px;
+	float: left;
+}
+.hongpaPage .allplaceContent h2{
+	color: #282828;
+	font-size: 26px;
+}
+.hongpaPage .allplaceContent .allplaceText{
+	float: left;
+	height: 212px;
+	margin-left: 20px;
+	position: relative;
+	width: 460px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #cdcdcd;
+	position: relative;
+}
+.hongpaPage .allplaceContent:last-child .allplaceText{
+	border: none;
+}
+.hongpaPage .allplaceContent .allplaceText p:nth-of-type(1){
+    padding-top: 30px;
+}
+.hongpaPage .allplaceContent .allplaceText p i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 3px;
+	background: url('../images/banner-details-page_18.png') center center no-repeat;
+}
+.hongpaPage .allplaceContent .allplaceText span{
+	position: absolute;
+	bottom: 20px;
+	right: 0;
+	font-size: 20px;
+	color: #ff9914;
+}
+.hongpaPage .allplaceContent .allplaceText p:last-child{
+	font-size: 20px;
+	color: #686868;
+	position: absolute;
+	left: 0px;
+	bottom: 20px;
+}
+
+
+
+

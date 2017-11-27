@@ -1,0 +1,148 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+.clearfix::before,
+.clearfix::after{
+	content:'';
+	display: block;
+	line-height: 0;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+// html,body{
+// 	width: 100%;
+// }
+.pageContainer{
+	width: 690px;
+	margin: 0 auto;
+}
+
+.dituPage .daohang{
+	position: relative;
+}
+.dituPage .daohang .ditu{
+	width: 100%;
+	height: 600px;
+	overflow: scroll;
+	position: relative;
+}
+.dituPage .daohang a{
+	width: 58px;
+	height: 58px;
+	border-radius: 50%;
+	position: absolute;
+}
+.dituPage .daohang a:nth-of-type(1){
+	background: url('../images/daohangtubiao_03.png') center center no-repeat;
+	background-size: 58px 58px;
+	left: 30px;
+	top: 30px;
+}
+.dituPage .daohang a:nth-of-type(2){
+	background: url('../images/daohangtubiao_07.png') center center no-repeat;
+	background-size: 58px 58px;
+	right: 30px;
+	top: 30px;
+}
+.dituPage .daohang a:nth-of-type(3){
+	background: url('../images/daohangtubiao_30.png') center center no-repeat;
+	background-size: 58px 58px;
+	left: 30px;
+	bottom: 30px;
+}
+
+// button{
+// 	height: 50px;
+// }
+
+.dituPage .placeContent{
+	width: 100%;
+	background-color: #fff;
+	overflow: hidden;
+	padding-bottom: 100px;
+}
+.dituPage .allplaceContent{
+	width: 100%;
+	height: 212px;
+	height: 242px;
+	background-color: #fff;
+	/* border-bottom: 1px solid #ddd; */
+	padding-top: 20px;
+}
+
+.dituPage .allplaceContent img{
+	width: 210px;
+	height: 212px;
+	float: left;
+}
+.dituPage .allplaceContent h2{
+	color: #282828;
+	font-size: 26px;
+}
+.dituPage .allplaceContent .allplaceText{
+	float: left;
+	height: 212px;
+	margin-left: 20px;
+	position: relative;
+	width: 460px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #cdcdcd;
+	position: relative;
+}
+.dituPage .allplaceContent:last-child .allplaceText{
+	border: none;
+}
+.dituPage .allplaceContent .allplaceText p:nth-of-type(1){
+    padding-top: 30px;
+}
+.dituPage .allplaceContent .allplaceText p i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 3px;
+	background: url('../images/banner-details-page_18.png') center center no-repeat;
+}
+.dituPage .allplaceContent .allplaceText span{
+	position: absolute;
+	bottom: 20px;
+	right: 0;
+	font-size: 20px;
+	color: #ff9914;
+}
+.dituPage .allplaceContent .allplaceText p:last-child{
+	font-size: 20px;
+	color: #686868;
+	position: absolute;
+	left: 0px;
+	bottom: 20px;
+}
+
+.dituPage .allplaceContent .allplaceText del{
+	width: 68px;
+	height: 68px;
+	position: absolute;
+	right: 10px;
+	bottom: 78px;
+	background: url('../images/daohangtubiao_43.png') center center no-repeat;
+	background-size: 68px 68px;
+}
+
+
+
+
+
+
+
+
+

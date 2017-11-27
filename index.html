@@ -2,168 +2,1682 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>个人主页</title>
+    <title>WangF的个人博客</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/shake.css">
-    <!--<link rel="stylesheet" href="./css/reset.css">-->
-    <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/jquery-3.2.1.js"></script>
-    <script src="./js/bootstrap.js"></script>
-    <script src="./js/angular.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/head.css">
+    <!-- nav、轮播图、小黑板 -->
+    <link rel="stylesheet" href="css/nav.css">
+    <!-- myTemplate、beginner -->
+    <link rel="stylesheet" href="css/myTemplate.css">
+    <!-- firstPage第一页 -->
+    <link rel="stylesheet" href="css/firstPage.css">
+    <!--学习进阶-->
+    <link rel="stylesheet" href="css/learning.css">
+    <!--我的作品-->
+    <link rel="stylesheet" href="css/myWorks.css">
+    <!--成长之路-->
+    <link rel="stylesheet" href="css/growthRoad.css">
+    <!--小小愿望-->
+    <link rel="stylesheet" href="css/wish.css">
+    <!--留言板-->
+    <link rel="stylesheet" href="css/message.css">
+
+    <link rel="icon" href="author.ico">
+    <style>
+        body {
+            padding-bottom: 10px;
+        }
+
+        .footFoot {
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            background-color: #6ec;
+            margin-top: 25px;
+            border-radius: 10px;
+            line-height: 40px;
+        }
+
+        /*轻松一刻*/
+        .funVideo {
+            width: 700px;
+            height: 350px;
+            background: #000;
+            border: 14px solid #000;
+            margin: 0 auto;
+            border-radius: 5px;
+            position: fixed;
+            top: 50%;
+            margin-top: -175px;
+            left: 50%;
+            margin-left: -350px;
+            z-index: 115;
+            display: none;
+            box-shadow: 1px 1px 35px -1px #000;
+        }
+
+        .bodyMask {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+            z-index: 113;
+            display: none;
+        }
+
+        /*主页*/
+        .mainPage {
+
+        }
+
+        /*学习进阶*/
+        .learning {
+            display: none;
+        }
+
+        /*我的作品*/
+        .myWorks {
+            display: none;
+        }
+
+        /*我的简历*/
+        .myResume {
+            display: none;
+        }
+
+        /*成长之路*/
+        .growthRoad {
+            display: none;
+        }
+
+        /*小小愿望*/
+        .wall {
+            display: none;
+        }
+
+        /*留言板*/
+        .message {
+            display: none;
+        }
+
+
+        .proMask{
+            width: 100%;
+            height:100%;
+            background: rgba(0,0,0,0.6);
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        .proMask .proShow{
+            width: 800px;
+            height: 500px;
+            margin: 50px auto;
+            background-repeat: no-repeat;
+            background-color: #fff;
+            background-size: contain;
+            /*background-image: url("imgs/charts.jpg");*/
+        }
+
+        .myResume{
+            position: relative;
+        }
+        .myBlogLink{
+            position: absolute;
+            left: 315px;
+            top: 40px;
+        }
+    </style>
 </head>
-<body ng-app="app" ng-controller="Ctrl">
-<nav class="navBar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only"></span>
-                <!-- 三个小横线-->
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<body>
+<div class="bodyMask"></div>
+<div class="container">
+    <!-- 头部head -->
+    <div class="head">
+        <div class="logo">
+            <a href="#">
+                <p></p>
+                <p></p>
+            </a>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">主页</a></li>
-                <li role="presentation"><a href="#canI" role="tab" data-toggle="tab">我会什么</a></li>
-                <li role="presentation"><a href="#resume" role="tab" data-toggle="tab">个人简历</a></li>
-                <li role="presentation"><a href="#more" role="tab" data-toggle="tab">了解更多</a></li>
+        <div class="motto">
+            <p>一个人因为看到另外一种生活方式更有重大的意义</p>
+            <p>只经过半小时的考虑就甘愿抛弃一生一事业前途,这才需要很强的个性呢</p>
+            <p>冒然走出这一步，以后永不后悔，那需要的个性就更多了</p>
+            <p>---By:<span>&nbsp;WangF</span></p>
+        </div>
+        <div class="logo-coffee"></div>
+    </div>
+
+    <!-- 导航栏nav -->
+    <div class="nav">
+        <ul>
+            <li><a href="#!/firstPage">首页</a></li>
+            <li><a href="#!/learning">学习进阶</a></li>
+            <li><a href="#!/myWorks">我的作品</a></li>
+            <li><a href="#!/growthRoad">成长之路</a></li>
+            <li><a href="#!/wish">小小愿望</a></li>
+            <li><a href="#!/message">留言板</a></li>
+        </ul>
+    </div>
+
+    <!-- 首页 -->
+    <div class="mainPage">
+        <!-- 轮播图 -->
+        <div class="slideshow">
+            <div class="showImg">
+                <img src="images/s-banner1.jpg" alt="">
+                <img src="images/s-banner2.jpg" alt="">
+                <img src="images/s-banner3.jpg" alt="">
+                <img src="images/s-banner4.jpg" alt="">
+                <img src="images/s-banner5.jpg" alt="">
+            </div>
+            <ul class="banNav">
+                <li><a href="#"><img src="images/s-b1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/s-b2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/s-b3.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/s-b4.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/s-b5.jpg" alt=""></a></li>
+                <div class="banMask"></div>
             </ul>
-            <div class="area visible-lg">
+        </div>
+        <!-- 小黑板 -->
+        <div class="blackBoard">
+            <div class="oneMotto">
+                未来将属于两种人：思想的人和劳动的人。实际上这两种人是一种人，因为思想也是劳动。
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+
+        <!-- 我的网站模板 -->
+        <div class="myTemplate">
+            <p>个人博客模板 <span>Blog Template</span></p>
+            <div class="blogTemplate">
+                <!--<span><</span>-->
+                <!--<span>></span>-->
                 <ul>
-                    <li><a href="#" id="city">杭州市</a>
-                        <div class="weather">
-                            <div class="today">
-                                <span>{{today}}</span><i>{{day}}日{{week}}</i><i>{{weather}}</i>
-                                <p><i>{{minTmp}}℃~{{maxTmp}}℃</i><i>{{wind}}</i></p>
-                                <p></p>
-                                <p><i>空气:&nbsp;{{air}}</i><i>pm2.5:&nbsp;{{pm}}</i></p>
-                                <p>{{suggestion}}</p>
+                    <li><a href=""><img src="images/blogPic1.jpg" alt="">
+                        <h3>首页</h3>
+                        <span>主要介绍我的网站样式，与博文分享。</span></a></li>
+                    <li><a href=""><img src="images/blogPic2.jpg" alt="">
+                        <h3>学习进阶</h3><span>对我的学习知识进行分享，并且可以看到我的优秀博客。</span></a></li>
+                    <li><a href=""><img src="images/blogPic3.jpg" alt="">
+                        <h3>我的作品</h3><span>在这里分别展示了我的主要作品，还有大量练习</span></a></li>
+                    <!--<li><img src="" alt=""></li>-->
+                    <!--<li><img src="" alt=""></li>-->
+                    <!--<li><img src="" alt=""></li>-->
+                    <!--<li><img src="" alt=""></li>-->
+                </ul>
+            </div>
+        </div>
+
+        <!-- 初学者入门 -->
+        <div class="beginner">
+            <p>轻松一刻 <span>Fun Time</span></p>
+            <ul>
+                <li><a href="javascript:;" class="funTime">爆笑虫子第一集：冰淇淋</a></li>
+                <li><a href="javascript:;" class="funTime">爆笑虫子第二集：蚊子</a></li>
+                <li><a href="javascript:;" class="funTime">爆笑虫子第三集：踢踏舞</a></li>
+                <li><a href="javascript:;" class="funTime">爆笑虫子第四集：蘑菇</a></li>
+                <li><a href="javascript:;" class="funTime">爆笑虫子第五集：口香糖</a></li>
+                <li><a href="javascript:;" class="funTime">爆笑虫子第六集：冰道</a></li>
+                <li><a href="javascript:;" class="funTime">爆笑虫子第七集：吸管</a></li>
+            </ul>
+        </div>
+
+        <!-- <div class="funVideo">
+            <video src="video/1.mp4" width="700" height="350" controls="controls" loop="loop"></video>
+        </div> -->
+
+        <div style="clear: both;"></div>
+        <div class="mainContent">
+            <!-- 文章推荐 -->
+            <div class="recommend">
+                <p>文章推荐</p>
+                <section class="article article1">
+                    <div class="article_content">
+                        <div class="article_pic"><a
+                                href="http://blog.csdn.net/ca817586/article/details/78646792"><img
+                                src="images/article_pic2.jpg" alt=""></a></div>
+                        <div class="article_text">
+                            <h3><a href="http://blog.csdn.net/ca817586/article/details/78646792">原型链详细解析</a></h3>
+                            <div class="author-info">
+                                <a href="javascript:;">
+                                    <img src="images/author.png" alt="">
+                                    <p class="author_name">WangF</p>
+                                </a>
+                                <p class="article_time">完成时间:2017-9-18 分类：个人博客</p>
                             </div>
-                            <ul class="Fweathers">
-                                <li ng-repeat="item in days">
-                                    {{item.title}}
-                                    <i>{{item.weather}}</i>
-                                    <i>{{item.tmp}}</i>
+                            <p class="introduction">
+                                你该清楚万物皆对象，对象又分为普通对象和函数对象，那么函数对象中的prototype你搞清楚了吗？道家曰：无，名天地之始，所以null创造了一切</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="article article2">
+                    <div class="article_content">
+                        <div class="article_pic"><a
+                                href="http://blog.csdn.net/ca817586/article/details/78647060"><img
+                                src="images/article_pic4.jpg" alt=""></a></div>
+                        <div class="article_text">
+                            <h3><a href="http://blog.csdn.net/ca817586/article/details/78647060">实现轮播图汇总</a></h3>
+                            <div class="author-info">
+                                <a href="javascript:;">
+                                    <img src="images/author.png" alt="">
+                                    <p class="author_name">WangF</p>
+                                </a>
+                                <p class="article_time">完成时间:2017-8-16 分类：个人博客</p>
+                            </div>
+                            <p class="introduction">还记得你第一次接触原生JS的轮播图吗，还记得你最初是如何写轮播图的吗，点击左侧，看看你是否这么写过轮播图。</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="article article3">
+                    <div class="article_content">
+                        <div class="article_pic"><a
+                                href="http://blog.csdn.net/ca817586/article/details/78647205"><img
+                                src="images/article_pic5.jpg" alt=""></a></div>
+                        <div class="article_text">
+                            <h3><a href="http://blog.csdn.net/ca817586/article/details/78647205">自己封装的来用来存储数据</a></h3>
+                            <div class="author-info">
+                                <a href="javascript:;">
+                                    <img src="images/author.png" alt="">
+                                    <p class="author_name">WangF</p>
+                                </a>
+                                <p class="article_time">完成时间:2017-7-18 分类：个人博客</p>
+                            </div>
+                            <p class="introduction">在字典中,我们利用[键,值]的形式来存储数据,字典和集合很相似,集合以[值,值]的形式存储元素,字典以[键,值]的形式来存储元素,也成映射
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="article article4">
+                    <div class="article_content">
+                        <div class="article_pic"><a
+                                href="http://blog.csdn.net/qq_33599109/article/details/74560596"><img
+                                src="images/article_pic7.jpg" alt=""></a></div>
+                        <div class="article_text">
+                            <h3><a href="http://blog.csdn.net/qq_33599109/article/details/74560596">github的建立</a></h3>
+                            <div class="author-info">
+                                <a href="javascript:;">
+                                    <img src="images/author.png" alt="">
+                                    <p class="author_name">WangF</p>
+                                </a>
+                                <p class="article_time">完成时间:2017-7-6 分类：个人博客</p>
+                            </div>
+                            <p class="introduction">每次不断的更新自己的网页，但在搜索框中却不能找到它，这一次终于解决了这个bug，点击左侧查看如何建立自己的github吧</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="article article5">
+                    <div class="article_content">
+                        <div class="article_pic"><a href="#"><img src="images/article_pic1.jpg" alt=""></a></div>
+                        <div class="article_text">
+                            <h3><a href="#">建立属于自己的网站</a></span></h3>
+                            <div class="author-info">
+                                <a href="javascript:;">
+                                    <img src="images/author.png" alt="">
+                                    <p class="author_name">WangF</p>
+                                </a>
+                                <p class="article_time">准备时间:2015-11至 现在 分类：我的作品</p>
+                            </div>
+                            <p class="introduction">
+                                高中毕业，莫名奇妙的选择了计算机专业，怀着好奇与憧憬开启了我的编程之路，然而年少的我想要有一个属于自己的网站，所以十里桃花，我选择了前端这一枝</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="article article6">
+                    <div class="article_content">
+                        <div class="article_pic"><a
+                                href="http://blog.csdn.net/qq_33599109/article/details/77540361"><img
+                                src="images/article_pic3.jpg" alt=""></a></div>
+                        <div class="article_text">
+                            <h3><a href="http://blog.csdn.net/qq_33599109/article/details/77540361">用JS实现路由效果</a></h3>
+                            <div class="author-info">
+                                <a href="javascript:;">
+                                    <img src="images/author.png" alt="">
+                                    <p class="author_name">WangF</p>
+                                </a>
+                                <p class="article_time">完成时间:2017-8-16 分类：个人博客</p>
+                            </div>
+                            <p class="introduction">
+                                当你还不会框架，还不懂路由时，你是否为每点击一次页面就要刷新而感到痛苦，现在就教你用原生的JS实现页面跳转，为页面添加历史记录，不刷新页面哟。</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="article article7">
+                    <div class="article_content">
+                        <div class="article_pic"><a
+                                href="http://blog.csdn.net/qq_33599109/article/details/77257182"><img
+                                src="images/article_pic7.jpg" alt=""></a></div>
+                        <div class="article_text">
+                            <h3><a href="http://blog.csdn.net/qq_33599109/article/details/77257182">JavaScript封装缓动动画函数</a>
+                            </h3>
+                            <div class="author-info">
+                                <a href="javascript:;">
+                                    <img src="images/author.png" alt="">
+                                    <p class="author_name">WangF</p>
+                                </a>
+                                <p class="article_time">发布时间:2017-8-16 分类：学无止境</p>
+                            </div>
+                            <p class="introduction">
+                                缓动动画，相信大家都不陌生，比如盒子的移动，圆形图的缓动缩放，应用有如轮播图，楼层跳跃，那么既然有这么多的应用，我们势必会想到去把它封装起来，等到需要时，直接拿来用就是了。</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="article article8">
+                    <div class="article_content">
+                        <div class="article_pic"><a
+                                href="http://blog.csdn.net/qq_33599109/article/details/78022825"><img
+                                src="images/article_pic8.jpg" alt=""></a></div>
+                        <div class="article_text">
+                            <h3><a href="http://blog.csdn.net/qq_33599109/article/details/78022825">jsonp解决跨域问题</a></h3>
+                            <div class="author-info">
+                                <a href="javascript:;">
+                                    <img src="images/author.png" alt="">
+                                    <p class="author_name">WangF</p>
+                                </a>
+                                <p class="article_time">发布时间:2017-9-18 分类：学无止境</p>
+                            </div>
+                            <p class="introduction">因为JavaScript同源策略的限制，ab.com
+                                域名下的js无法操作bc.com或是c.ab.com域名下的对象。jsonP就是解决跨域问题的方式之一，也是最常用解决方式</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 小模块 -->
+                <div style="clear: both;"></div>
+                <div class="moduleContainer">
+                    <div class="littleModule webModule">
+                        <h3>Web前端</h3>
+                        <ul class="moduleContent">
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/77318443">JavaScript轮播图</a>
+                            </li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/77540361">为文中切换添加历史记录</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/77257182">缓动动画的函数封装</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/78022825">jsonp解决跨域问题</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/74562353">简单算法题</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/78122557">BOM和DOM</a></li>
+                        </ul>
+                        <ol class="moduleList">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                        </ol>
+                    </div>
+                    <div class="littleModule frameModule">
+                        <h3>软件安装</h3>
+                        <ul class="moduleContent">
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/74932756">sbulime重要插件安装</a>
+                            </li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/74838724">wampserver出错处理</a>
+                            </li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/76358922">markdown基本语法整理</a>
+                            </li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/77048496"> sulime
+                                Text3中文不显示处理</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/78032918"> nvm安装与gulp使用</a>
+                            </li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/78084538">konva简单理解</a></li>
+                        </ul>
+                        <ol class="moduleList">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 站内搜索 -->
+            <div class="search">
+                <p>站内搜索</p>
+                <div class="searchInp">
+                    <input type="text" placeholder="请输入要搜索的内容"><span></span>
+                </div>
+                <div class="gather">
+                    <a href="javascript:;"><span>成长进阶</span></a>
+                    <a href="javascript:;"><span>我的作品</span></a>
+                    <a href="javascript:;"><span>我的简历</span></a>
+                    <a href="javascript:;"><span>留言板</span></a>
+                </div>
+
+                <!-- blog -->
+                <div class="attention">
+                    <h3>关注博客</h3>
+                    <ul>
+                        <li>
+                            <p>邮箱订阅：</p>
+                            <a href="javascript:;"></a>
+                        </li>
+                        <li>
+                            <p>联系Q主：</p>
+                            <a href="javascript:;"></a>
+                        </li>
+                        <li>
+                            <p>加入群聊：</p>
+                            <a href="javascript:;"></a>
+                        </li>
+                        <li>
+                            <p>关注博客：</p>
+                            <a href="http://blog.csdn.net/qq_33599109"><span></span><span>关注blog</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- hot -->
+                <div class="hot">
+                    <h3>热门推荐</h3>
+                    <div class="hotRecommend">
+                        <ul class="hot_title">
+                            <li>点击排行</li>
+                            <li>小知识分享</li>
+                            <li>软件安装</li>
+                        </ul>
+                        <!-- ul>li* -->
+                        <div class="hotContent">
+                            <ul class="hotContent1">
+                                <li>
+                                    <a href="http://blog.csdn.net/qq_33599109/article/details/77318443">JavaScript轮播图</a>
+                                </li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/77540361">为文中切换添加历史记录</a>
+                                </li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/77257182">缓动动画的函数封装</a>
+                                </li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/78022825">jsonp解决跨域问题</a>
+                                </li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/74562353">简单算法题</a></li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/78122557">BOM和DOM</a></li>
+                            </ul>
+                            <ul class="hotContent2">
+                                <li>
+                                    <a href="http://blog.csdn.net/qq_33599109/article/details/74560596">如何快速建立自己的github</a>
+                                </li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/78020488">
+                                    javascript原型链详细解析</a></li>
+                                <li>
+                                    <a href="http://blog.csdn.net/qq_33599109/article/details/76610057">DOM中NodeList(转)</a>
+                                </li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/75271637">清除浮动详解</a></li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/75252718">权重分析</a></li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/76299206">静态页面的注意事项</a>
+                                </li>
+                            </ul>
+                            <ul class="hotContent3">
+                                <li>
+                                    <a href="http://blog.csdn.net/qq_33599109/article/details/74932756">sbulime重要插件安装</a>
+                                </li>
+                                <li>
+                                    <a href="http://blog.csdn.net/qq_33599109/article/details/74838724">wampserver出错处理</a>
+                                </li>
+                                <li>
+                                    <a href="http://blog.csdn.net/qq_33599109/article/details/76358922">markdown基本语法整理</a>
+                                </li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/77048496"> sulime
+                                    Text3中文不显示处理</a></li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/78032918">
+                                    nvm安装与gulp使用</a></li>
+                                <li><a href="http://blog.csdn.net/qq_33599109/article/details/78084538">konva简单理解</a>
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                    <li><a href="#" title="github"><i data-img="./img/github.png"></i></a></li>
-                    <li><a href="#" title="设置"><i data-img="./img/settings.png"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-<section id="fullH">
-    <ul class="fullBg">
-        <li class="active" data-img="./img/banner1.jpg">
-            <div id="fullDiv">
-                <h4>我必须对自己负责<a href="#" id="musicBtn"><i data-img="./img/playH.png"></i>播放器</a></h4>
-                <p>一个人因为看到另外一种生活方式更有重大的意义，只经过半小时的考虑就甘愿抛弃一生一事业前途，这才需要很强的个性呢，冒然走出这一步，以后永不后悔，那需要的个性就更多了。</p>
-                <audio src="./medio/lironghao.mp3" id="music" loop="loop"></audio>
-            </div>
-        </li>
-        <li data-img="./img/weilai.jpg">
-            <div>
-                <h4>未来</h4>
-                <p>未来将属于两种人：思想的人和劳动的人。实际上这两种人是一种人，因为思想也是劳动。</p>
-            </div>
-        </li>
-        <li data-img="./img/chengxuyuan.jpg">
-            <div>
-                <h4>现在</h4>
-                <p>昨天不能换回来，明天还不确实，而确有把握的就是今天。今日一天，当明天两天。</p>
-            </div>
-        </li>
-        <li data-img="./img/guoqu.jpg">
-            <div>
-                <h4>过去</h4>
-                <p> 曾经的曾经， 曾经多美。 过去的过去， 过去多真。 回忆的回忆， 回忆多涩。</p>
-            </div>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">
-            <div class="homeArrow visible-lg">
-                <a href="#" id="prevH"><i data-img="./img/arrow-left.png"></i></a>
-                <a href="#" id="currH"><i data-img="./img/img.png"></i></a>
-                <a href="#" id="nextH"><i data-img="./img/arrow-right.png"></i></a>
-                <a href="#" id="fullS"><i data-img="./img/fullscreen.png"></i></a>
-            </div>
-            <div class="me">
-                <div class="meTitle">
+                        <!-- 序列 -->
+                        <ol class="hotList">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- 最新评论 -->
+                <div class="comment">
+                    <h3>最新评论</h3>
+                    <div class="comContent" id="comContent">
+                        <ul>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author.png" alt="">
+                                </div>
+                                <p>WangF<span></span><span>留言</span> : 稳住,我们能赢</p>
+                            </li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author1.jpg" alt="">
+                                </div>
+                                <p>坏坏的学生<span></span><span>留言</span> : 菜的抠脚</p></li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author2.jpg" alt="">
+                                </div>
+                                <p>萌萌`哒<span></span><span>留言</span> : 继续加油哦！</p>
+                            </li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author3.jpg" alt="">
+                                </div>
+                                <p>高冷女神<span></span><span>留言</span> : 在迈向菜鸟的路上</p>
+                            </li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author4.jpg" alt="">
+                                </div>
+                                <p>汪星人<span></span><span>留言</span> : 刚入门的菜菜，可以带带我吗？</p>
+                            </li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author5.jpg" alt="">
+                                </div>
+                                <p>阳光午后<span></span><span>留言</span> : 今天心情不错</p>
+                            </li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author6.jpg" alt="">
+                                </div>
+                                <p>莫名奇妙<span></span><span>留言</span> : 做了多久</p>
+                            </li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author7.jpg" alt="">
+                                </div>
+                                <p>多喝热水<span></span><span>留言</span> : 吃饭、睡觉、敲代码</p>
+                            </li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author8.jpg" alt="">
+                                </div>
+                                <p>晴空万里<span></span><span>留言</span> : 路还很长，坚持坚持坚持</p>
+                            </li>
+                            <li>
+                                <div class="picBorder">
+                                    <img src="images/author9.jpg" alt="">
+                                </div>
+                                <p>风雨无阻<span></span><span>留言</span> : 滚去敲代码</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 一路走来 -->
+                <div class="longRoad">
+                    <h3>一路走来</h3>
+                    <div class="version version01">
+                        <p>2015-11</p>
+                        <p>完成自己的第一个静态网页</p>
+                    </div>
+                    <div class="version version02">
+                        <p>2016-3</p>
+                        <p>更新自己的网页</p>
+                    </div>
+                    <div class="version version03">
+                        <p>2016-11</p>
+                        <p>加入更多子页面</p>
+                    </div>
+                    <div class="version version04">
+                        <p>2017-1</p>
+                        <p>重新改变网页布局，加入背景音乐</p>
+                    </div>
+                    <div class="version version04">
+                        <p>2017-9</p>
+                        <p>开始最新版本的更新，增添路由</p>
+                    </div>
+                </div>
+
+                <!-- 友情链接 -->
+                <div class="linkMore">
+                    <h3>友情链接</h3>
                     <ul>
-                        <li><span class="shake">About <br> Me</span></li>
-                        <li><i data-img="./img/qq.png"></i></li>
-                        <li><i data-img="./img/weChat.png"></i></li>
-                        <li><i data-img="./img/sina.png"></i></li>
+                        <li><a href="#">个人网站</a></li>
+                        <li><a href="http://blog.csdn.net/qq_33599109">个人博客</a></li>
                     </ul>
                 </div>
-                <div class="meContent">
-                    <div id="aboutMe">
-                        <h5>王丰</h5>
-                        <p>手机:15888738658</p>
-                        <p>邮箱:335889056@qq.com</p>
-                    </div>
-                    <div id="qq" data-img="./img/qq_code.jpg"></div>
-                    <div id="weChat" data-img="./img/weChat_code.jpg"></div>
-                    <div id="sina" data-img="./img/sina_code.jpg"></div>
-                </div>
             </div>
 
         </div>
-        <div role="tabpanel" class="tab-pane" id="canI">
-            <div class="canContent">
+    </div>
+
+
+    <!--学习进阶-->
+    <div class="learning">
+        <div style="clear: both;"></div>
+        <div class="map">
+            <a href="#">首页</a>
+            <p>>学习进阶</p>
+        </div>
+        <div class="learningContent">
+            <section class="article article6">
+                <div class="article_content">
+                    <div class="article_pic"><a href="http://blog.csdn.net/qq_33599109/article/details/78032918"><img
+                            src="images/article_pic1.jpg" alt=""></a></div>
+                    <div class="article_text">
+                        <h3><a href="http://blog.csdn.net/qq_33599109/article/details/78032918">nvm的安装和gulp的使用</a></h3>
+                        <div class="author-info">
+                            <a href="javascript:;">
+                                <img src="images/author.png" alt="">
+                                <p class="author_name">WangF</p>
+                            </a>
+                            <p class="article_time">完成时间:2017-9-18 分类：个人博客</p>
+                        </div>
+                        <p class="introduction">作为前端开发者，版本控制器对你来说应该是方便实用的，而在优化网站资源时，gulp也是不错的选择，运用得当便可大大提高我们的工作效率</p>
+                    </div>
+                </div>
+            </section>
+            <section class="article article5">
+                <div class="article_content">
+                    <div class="article_pic"><a href="http://blog.csdn.net/qq_33599109/article/details/78020488"><img
+                            src="images/article_pic2.jpg" alt=""></a></div>
+                    <div class="article_text">
+                        <h3><a href="http://blog.csdn.net/qq_33599109/article/details/78020488">原型链详细解析</a></h3>
+                        <div class="author-info">
+                            <a href="javascript:;">
+                                <img src="images/author.png" alt="">
+                                <p class="author_name">WangF</p>
+                            </a>
+                            <p class="article_time">完成时间:2017-9-18 分类：个人博客</p>
+                        </div>
+                        <p class="introduction">
+                            你该清楚万物皆对象，对象又分为普通对象和函数对象，那么函数对象中的prototype你搞清楚了吗？道家曰：无，名天地之始，所以null创造了一切</p>
+                    </div>
+                </div>
+            </section>
+            <section class="article article4">
+                <div class="article_content">
+                    <div class="article_pic"><a href="http://blog.csdn.net/qq_33599109/article/details/77540361"><img
+                            src="images/article_pic3.jpg" alt=""></a></div>
+                    <div class="article_text">
+                        <h3><a href="http://blog.csdn.net/qq_33599109/article/details/77540361">用JS实现路由效果</a></h3>
+                        <div class="author-info">
+                            <a href="javascript:;">
+                                <img src="images/author.png" alt="">
+                                <p class="author_name">WangF</p>
+                            </a>
+                            <p class="article_time">完成时间:2017-8-16 分类：个人博客</p>
+                        </div>
+                        <p class="introduction">
+                            当你还不会框架，还不懂路由时，你是否为每点击一次页面就要刷新而感到痛苦，现在就教你用原生的JS实现页面跳转，为页面添加历史记录，不刷新页面哟。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="article article3">
+                <div class="article_content">
+                    <div class="article_pic"><a href="http://blog.csdn.net/qq_33599109/article/details/77249062"><img
+                            src="images/article_pic4.jpg" alt=""></a></div>
+                    <div class="article_text">
+                        <h3><a href="http://blog.csdn.net/qq_33599109/article/details/77249062">各类原生JS轮播图汇总</a></h3>
+                        <div class="author-info">
+                            <a href="javascript:;">
+                                <img src="images/author.png" alt="">
+                                <p class="author_name">WangF</p>
+                            </a>
+                            <p class="article_time">完成时间:2017-8-16 分类：个人博客</p>
+                        </div>
+                        <p class="introduction">还记得你第一次接触原生JS的轮播图吗，还记得你最初是如何写轮播图的吗，点击左侧，看看你是否这么写过轮播图。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="article article2">
+                <div class="article_content">
+                    <div class="article_pic"><a href="http://blog.csdn.net/qq_33599109/article/details/75271637"><img
+                            src="images/article_pic5.jpg" alt=""></a></div>
+                    <div class="article_text">
+                        <h3><a href="http://blog.csdn.net/qq_33599109/article/details/75271637">web前端清除浮动</a></h3>
+                        <div class="author-info">
+                            <a href="javascript:;">
+                                <img src="images/author.png" alt="">
+                                <p class="author_name">WangF</p>
+                            </a>
+                            <p class="article_time">完成时间:2017-7-18 分类：个人博客</p>
+                        </div>
+                        <p class="introduction">清除浮动的方式有很多中，不论你了解的是哪一种，掌握它的原理是必不可少的，给父盒子加高度，或者加两堵墙都是不错的方法。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="article article2">
+                <div class="article_content">
+                    <div class="article_pic"><a href="http://blog.csdn.net/qq_33599109/article/details/74838724"><img
+                            src="images/article_pic6.jpg" alt=""></a></div>
+                    <div class="article_text">
+                        <h3><a href="http://blog.csdn.net/qq_33599109/article/details/74838724">wampserver安装的出错处理</a>
+                        </h3>
+                        <div class="author-info">
+                            <a href="javascript:;">
+                                <img src="images/author.png" alt="">
+                                <p class="author_name">WangF</p>
+                            </a>
+                            <p class="article_time">完成时间:2017-7-8 分类：个人博客</p>
+                        </div>
+                        <p class="introduction">
+                            在安装新的软件时总会出现这样那样的错误，而同一款软件所出现的错误也是千差万别的，如果你恰巧在装wampserver，而且恰巧出现了一些无法解决的错误，那么过来看看吧。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="article article1">
+                <div class="article_content">
+                    <div class="article_pic"><a href="http://blog.csdn.net/qq_33599109/article/details/74560596"><img
+                            src="images/article_pic7.jpg" alt=""></a></div>
+                    <div class="article_text">
+                        <h3><a href="http://blog.csdn.net/qq_33599109/article/details/74560596">github的建立</a></h3>
+                        <div class="author-info">
+                            <a href="javascript:;">
+                                <img src="images/author.png" alt="">
+                                <p class="author_name">WangF</p>
+                            </a>
+                            <p class="article_time">完成时间:2017-7-6 分类：个人博客</p>
+                        </div>
+                        <p class="introduction">每次不断的更新自己的网页，但在搜索框中却不能找到它，这一次终于解决了这个bug，点击左侧查看如何建立自己的github吧</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- 站内搜索 -->
+        <div class="learningSearch">
+            <div class="searchInp">
+                <input type="text" placeholder="请输入要搜索的内容"><span></span>
+            </div>
+            <div class="gather">
+                <a href="#"><span>学习进阶</span></a>
+                <a href="#"><span>我的作品</span></a>
+                <a href="#"><span>我的简历</span></a>
+                <a href="#"><span>留言板</span></a>
+            </div>
+
+            <!-- blog -->
+            <div class="attention">
+                <h3>关注博客</h3>
                 <ul>
-                    <li>天气预报</li>
-                    <li>万年历</li>
-                    <li>时钟</li>
-                    <li>手风琴轮播器</li>
-                    <li>高德map</li>
-                    <li>物品放大</li>
-                    <li>todoMVC</li>
-                    <li>音乐播放器</li>
+                    <li>
+                        <p>邮箱订阅：</p>
+                        <a href="javascript:;"></a>
+                    </li>
+                    <li>
+                        <p>联系Q主：</p>
+                        <a href="javascript:;"></a>
+                    </li>
+                    <li>
+                        <p>加入群聊：</p>
+                        <a href="javascript:;"></a>
+                    </li>
+                    <li>
+                        <p>关注博客：</p>
+                        <a href="http://blog.csdn.net/qq_33599109"><span></span><span>关注blog</span></a>
+                    </li>
                 </ul>
             </div>
-            <div class="canList">
-                <div>
-                    <iframe src="./weather.html" frameborder="0"></iframe>
+
+
+            <!-- hot -->
+            <div class="hot">
+                <h3>热门推荐</h3>
+                <div class="hotRecommend">
+                    <div class="hotContent">
+                        <ul class="hotContent1">
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/77318443">JavaScript轮播图</a>
+                            </li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/77540361">为文中切换添加历史记录</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/77257182">缓动动画的函数封装</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/78022825">jsonp解决跨域问题</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/74562353">简单算法题</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109/article/details/78122557">BOM和DOM</a></li>
+                        </ul>
+
+                    </div>
+                    <!-- 序列 -->
+                    <ol class="hotList">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                    </ol>
                 </div>
-                <div>
-                    <iframe src="./万年历.html" frameborder="0"></iframe>
-                </div>
-                <div>
-                    <iframe src="./时钟.html" frameborder="0"></iframe>
-                </div>
-                <div>
-                    <iframe src="./旋转式轮播图.html" frameborder="0"></iframe>
-                </div>
-                <div>
-                    <iframe src="./map.html" frameborder="0"></iframe>
-                </div>
-                <div>
-                    <iframe src="./商品放大.html" frameborder="0"></iframe>
-                </div>
-                <div>
-                    <iframe src="./todomvc-app-template-master/index.html" frameborder="0"></iframe>
-                </div>
-                <div>888888</div>
+            </div>
+
+            <!-- 友情链接 -->
+            <div class="linkMore">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="#">个人网站</a></li>
+                    <li><a href="http://blog.csdn.net/qq_33599109">个人博客</a></li>
+                </ul>
             </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="resume">33213123</div>
-        <div role="tabpanel" class="tab-pane" id="more">4213123</div>
-    </div>
-</section>
-<script src="./js/index.js"></script>
-<script src="./js/main.js"></script>
-<script>
 
-</script>
+
+    </div>
+
+    <!--我的作品-->
+    <div class="myWorks">
+        <div style="clear: both;"></div>
+        <div class="map">
+            <a href="#">首页</a>
+            <p>>我的作品</p>
+        </div>
+        <div class="worksLink">
+            <ul>
+                <li><a href="javascript:;" id="worksLink1">我的作品展示</a></li>
+                <li><a href="javascript:;" id="worksLink2">我的练习展示</a></li>
+            </ul>
+        </div>
+
+        <div class="myWorksContent">
+            <div class="upWorks">
+                <div class="worksShow">
+                    <section class="article article2">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic3.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3><a href="#">我的少年梦 <span style="color: red;">建立属于自己的网站</span></a></h3>
+                                <div class="author-info">
+                                    <a href="#">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">准备时间:2015-11至 现在 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">
+                                    高中毕业，莫名奇妙的选择了计算机专业，怀着好奇与憧憬开启了我的编程之路，然而年少的我想要有一个属于自己的网站，所以十里桃花，我选择了前端这一枝</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="article article3">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic4.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3><a href="protects/todos/todos.html">angular的运用 <span style="color: red;">todos(备忘录)</span></a></h3>
+                                <div class="author-info">
+                                    <a href="protects/todos/todos.html">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">完成时间:2017-10 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">
+                                    本着检测对框架angular的掌握情况，在todoMVC网站做了最经典的备忘录案例，过程中总想用原生js或jq完成各项动能，但最终还是克制下来，顺利的用框架完成了它</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="article article3">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic8.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3><a href="protects/pubu/pubu.html">经典布局 <span style="color: red;">瀑布流</span></a></h3>
+                                <div class="author-info">
+                                    <a href="protects/pubu/pubu.html">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">完成时间:2017-9 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">这是一件在老师带领下完成的作品，此次主要学会了一种特殊的布局方式，并利用js实现网页滚动加载</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="article article1">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic6.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3><a href="protects/hihome/index.html">我的第一个参赛作品</a> <span style="color: red;">嘿逅</span></h3>
+                                <div class="author-info">
+                                    <a href="protects/hihome/index.html">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">完成时间:2017-9-10 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">这是我在团队协作的模式下完成的第一件作品，我们的嘿逅(hi
+                                    home)是以青春活力为主题打造的一款轰趴软件，点击左侧，你可以看到一款完整的手机端app</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="article article3">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic7.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3><a href="protects/music/index.html">自制音乐和视频播放器 <span style="color: red;">music and video</span></a></h3>
+                                <div class="author-info">
+                                    <a href="protects/music/index.html">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">完成时间:2017-8 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">在深入学习JS之后，用JS实现了视屏和音乐的播放，点击左侧让我们享受苦难后的硕果吧O(∩_∩)O哈！</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="article article3">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic10.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3>我模仿制作的小游戏 <span style="color: red;">数独</span></h3>
+                                <div class="author-info">
+                                    <a href="#">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">完成时间:2017-6 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">这是一个简单的数独小游戏，对技术的要求并不是很高，但是核心的算法却是很难，检测空白格子，然后把点击的方格移到空白处。</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="article article4">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic12.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3>我模仿制作网页 <span style="color: red;">简单企业网站</span></h3>
+                                <div class="author-info">
+                                    <a href="#">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">完成时间:2017-3 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">
+                                    这是一件很有意义的作品，当时我的技术还懵懵懂懂，在前女友的带领下，完成了这样一个静态页面+bootstrap的企业网站，在当时看来都是很大的进步(也是满满的幸福)</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="article article5">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic14.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3>踹开前端大门的那一脚 <span style="color: red;">静态网页:京东</span></h3>
+                                <div class="author-info">
+                                    <a href="#">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">完成时间:2016-11 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">
+                                    尽管学过网页制作，为了应付老师，也抄过简单的网页,但总觉得没有进入前端的大门，在掌握了前端最基础的知识后，独立完成了京东网站首页</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="article article6">
+                        <div class="article_content">
+                            <div class="article_pic"><a href="#"><img src="images/article_pic15.jpg" alt=""></a></div>
+                            <div class="article_text">
+                                <h3>初建静态网页 <span style="color: red;">博雅首页</span></h3>
+                                <div class="author-info">
+                                    <a href="#">
+                                        <img src="images/author.png" alt="">
+                                        <p class="author_name">WangF</p>
+                                    </a>
+                                    <p class="article_time">完成时间:2016-9 分类：我的作品</p>
+                                </div>
+                                <p class="introduction">凭借对基础知识的掌握，耐下性子，对自己进行的一次检测，以便达到查漏补缺的目的</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- 站内搜索 -->
+                <div class="workSearch">
+                    <div class="searchInp">
+                        <input type="text" placeholder="请输入要搜索的内容"><span></span>
+                    </div>
+                    <div class="gather">
+                        <a href="#"><span>学习进阶</span></a>
+                        <a href="#"><span>我的作品</span></a>
+                        <a href="#"><span>我的简历</span></a>
+                        <a href="#"><span>留言板</span></a>
+                    </div>
+
+                    <!-- blog -->
+                    <div class="attention">
+                        <h3>关注博客</h3>
+                        <ul>
+                            <li>
+                                <p>邮箱订阅：</p>
+                                <a href="javascript:;"></a>
+                            </li>
+                            <li>
+                                <p>联系Q主：</p>
+                                <a href="javascript:;"></a>
+                            </li>
+                            <li>
+                                <p>加入群聊：</p>
+                                <a href="javascript:;"></a>
+                            </li>
+                            <li>
+                                <p>关注博客：</p>
+                                <a href="http://blog.csdn.net/qq_33599109"><span></span><span>关注blog</span></a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <!-- hot -->
+                    <div class="hot">
+                        <h3>热门推荐</h3>
+                        <div class="hotRecommend">
+                            <div class="hotContent">
+                                <ul class="hotContent1">
+                                    <li><a href="http://blog.csdn.net/qq_33599109/article/details/77318443">JavaScript轮播图</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://blog.csdn.net/qq_33599109/article/details/77540361">为文中切换添加历史记录</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://blog.csdn.net/qq_33599109/article/details/77257182">缓动动画的函数封装</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://blog.csdn.net/qq_33599109/article/details/78022825">jsonp解决跨域问题</a>
+                                    </li>
+                                    <li><a href="http://blog.csdn.net/qq_33599109/article/details/74562353">简单算法题</a>
+                                    </li>
+                                    <li><a href="http://blog.csdn.net/qq_33599109/article/details/78122557">BOM和DOM</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- 序列 -->
+                            <ol class="hotList">
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- 友情链接 -->
+                    <div class="linkMore">
+                        <h3>友情链接</h3>
+                        <ul>
+                            <li><a href="#">个人网站</a></li>
+                            <li><a href="http://blog.csdn.net/qq_33599109">个人博客</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="downWorks">
+                <ul>
+                    <li data-brief='用三方插件画图表' title="charts"><a href="javascript:;"><img src="imgs/charts.jpg" alt=""></a></li>
+                    <li data-brief='点击获取地图坐标' title="ditu"><a href="javascript:;"><img src="imgs/ditu.jpg" alt=""></a></li>
+                    <li data-brief='angular和正则运用' title="checkText"><a href="javascript:;"><img src="imgs/checkText.jpg" alt=""></a></li>
+                    <li data-brief='ajax获取天气预报' title="tianqi"><a href="javascript:;"><img src="imgs/tianqi.jpg" alt=""></a></li>
+                    <li data-brief='ajax实现聊天机器人' title="liaotian"><a href="javascript:;"><img src="imgs/liaotian.jpg" alt=""></a></li>
+                    <li data-brief='ajax切换明星' title="mingxing"><a href="javascript:;"><img src="imgs/mingxing.jpg" alt=""></a></li>
+                    <li data-brief='canvas绘制进度条' title="canvas"><a href="javascript:;"><img src="imgs/canvas.jpg" alt=""></a></li>
+                    <li data-brief='canvas实现移动物体' title="yidong"><a href="javascript:;"><img src="imgs/yidong.jpg" alt=""></a></li>
+                    <li data-brief='多重背景' title="duochong"><a href="javascript:;"><img src="imgs/duochong.jpg" alt=""></a></li>
+                    <li data-brief='css画出多种图形' title="tuxing"><a href="javascript:;"><img src="imgs/tuxing.jpg" alt=""></a></li>
+                    <li data-brief='各种渐变' title="jianbian"><a href="javascript:;"><img src="imgs/jianbian.jpg" alt=""></a></li>
+                    <li data-brief='各种渐变2' title="jianbian2"><a href="javascript:;"><img src="imgs/jianbian2.jpg" alt=""></a></li>
+                    <li data-brief='伸缩布局' title="shensuo"><a href="javascript:;"><img src="imgs/shensuo.jpg" alt=""></a></li>
+                    <li data-brief='伸缩布局页面' title="shensuo2"><a href="javascript:;"><img src="imgs/shensuo2.jpg" alt=""></a></li>
+                    <li data-brief='多列布局' title="duolie"><a href="javascript:;"><img src="imgs/duolie.jpg" alt=""></a></li>
+                    <li data-brief='3D图片演示' title="3d"><a href="javascript:;"><img src="imgs/3d.jpg" alt=""></a></li>
+                    <li data-brief='2D缓动展示扑克牌' title="2d"><a href="javascript:;"><img src="imgs/2d.jpg" alt=""></a></li>
+                    <li data-brief='2D恢复盾牌' title="2d2"><a href="javascript:;"><img src="imgs/2d2.jpg" alt=""></a></li>
+                    <li data-brief='3D效果显示' title="3d2"><a href="javascript:;"><img src="imgs/3d2.jpg" alt=""></a></li>
+                    <li data-brief='旋转的立方体' title="lifangti"><a href="javascript:;"><img src="imgs/lifangti.jpg" alt=""></a></li>
+                    <li data-brief='个性显示' title="xianshi"><a href="javascript:;"><img src="imgs/xianshi.jpg" alt=""></a></li>
+                    <li data-brief='大海动态波涛' title="botao"><a href="javascript:;"><img src="imgs/botao.jpg" alt=""></a></li>
+                    <li data-brief='transform实现的无缝滚动' title="wufeng"><a href="javascript:;"><img src="imgs/wufeng.jpg" alt=""></a></li>
+                    <li data-brief='实现银河系的星星公转与自转' title="yuzhou"><a href="javascript:;"><img src="imgs/yuzhou.jpg" alt=""></a></li>
+                    <li data-brief='跳动的心' title="xindong"><a href="javascript:;"><img src="imgs/xindong.jpg" alt=""></a></li>
+                    <li data-brief='突出显示' title="tuchu"><a href="javascript:;"><img src="imgs/tuchu.jpg" alt=""></a></li>
+                    <li data-brief='模拟淘宝衣服切换' title="taobao"><a href="javascript:;"><img src="imgs/taobao.jpg" alt=""></a></li>
+                    <li data-brief='下拉菜单' title="caidan"><a href="javascript:;"><img src="imgs/caidan.jpg" alt=""></a></li>
+                    <li data-brief='表格动态添加数据' title="tjsj"><a href="javascript:;"><img src="imgs/tjsj.jpg" alt=""></a></li>
+                    <li data-brief='标题弹出框' title="tanchukuang"><a href="javascript:;"><img src="imgs/tanchukuang.jpg" alt=""></a></li>
+                    <li data-brief='美女相册' title="meinvxiangce"><a href="javascript:;"><img src="imgs/meinvxiangce.jpg" alt=""></a></li>
+                    <li data-brief='动态显示二维码' title="erweima"><a href="javascript:;"><img src="imgs/erweima.jpg" alt=""></a></li>
+                    <li data-brief='手风琴案例' title="shoufengqin"><a href="javascript:;"><img src="imgs/shoufengqin.jpg" alt=""></a></li>
+                    <li data-brief='模拟360开机小广告' title="360kaiji"><a href="javascript:;"><img src="imgs/360kaiji.jpg" alt=""></a></li>
+                    <li data-brief='模拟百度搜索' title="sousuo"><a href="javascript:;"><img src="imgs/sousuo.jpg" alt=""></a></li>
+                    <li data-brief='楼层跳跃' title="tiaoyue"><a href="javascript:;"><img src="imgs/tiaoyue.jpg" alt=""></a></li>
+                    <li data-brief='拖拽窗口' title="tuozhuai"><a href="javascript:;"><img src="imgs/tuozhua.jpg" alt=""></a></li>
+                    <li data-brief='歌曲的增删改查' title="gequ"><a href="javascript:;"><img src="imgs/gequ.jpg" alt=""></a></li>
+                    <li data-brief='很抱歉，由于内存原因只能展示图片' title=""><a href="javascript:;"></a></li>
+                </ul>
+            </div>
+            <div class="proMask">
+                <div class="proShow"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--成长之路-->
+    <div class="growthRoad">
+        <div style="clear: both"></div>
+        <div class="map">
+            <a href="#">首页</a>
+            <p>>成长之路</p>
+        </div>
+        <div class="growContent">
+            <ul class="growInfo">
+                <li class="growInfoLi">
+                    <div class="growHead">
+                        <img src="images/growthPic10.jpg" alt="">
+                    </div>
+                    <div class="growText">
+                        <p>愿历尽千帆，归去仍少年。</p>
+                        <span>2017-07</span>
+                    </div>
+                </li>
+                <li class="growInfoLi">
+                    <div class="growHead">
+                        <img src="images/growthPic1.jpg" alt="">
+                    </div>
+                    <div class="growText">
+                        <p>离校了，杭州，我来了。</p>
+                        <span>2017-06</span>
+                    </div>
+                </li>
+                <li class="growInfoLi">
+                    <div class="growHead">
+                        <img src="images/growthPic2.jpg" alt="">
+                    </div>
+                    <div class="growText">
+                        <p>抓紧最后的时刻，开始学习！！！</p>
+                        <span>2017-03</span>
+                    </div>
+                </li>
+                <li class="growInfoLi">
+                    <div class="growHead">
+                        <img src="images/growthPic3.jpg" alt="">
+                    </div>
+                    <div class="growText">
+                        <p>觉得自己的网页真的很low，不断的修改，不断的更新，开始认真学习网页制作，迈向前端。</p>
+                        <span>2016-10</span>
+                    </div>
+                </li>
+                <li class="growInfoLi">
+                    <div class="growHead">
+                        <img src="images/growthPic4.jpg" alt="">
+                    </div>
+                    <div class="growText">
+                        <p>没有大一时的忙碌，陌生的城市也渐渐熟悉，日子会有些枯燥乏味，闲暇时去图书馆看看书，去打打篮球，享受着美好的大学时光，与兄弟征战疆场，与爱人共话西山雨。</p>
+                        <span>2015-09</span>
+                    </div>
+                </li>
+                <li class="growInfoLi">
+                    <div class="growHead">
+                        <img src="images/growthPic5.jpg" alt="">
+                    </div>
+                    <div class="growText">
+                        <p>来到广州做实习生，积极的参与底层功能模块的编写，与团队交流协作，让我很愉快的度过了短暂的实习期，怀念一起为bug苦恼的日子。</p>
+                        <span>2015-07</span>
+                    </div>
+                </li>
+                <li class="growInfoLi">
+                    <div class="growHead">
+                        <img src="images/growthPic6.jpg" alt="">
+                    </div>
+                    <div class="growText">
+                        <p>第一次接触网页设计，需要提交自己设计的作品，网上各式的模板总觉得没有让自己满意的，自己又写不出好看的页面，最后经过仿写、修改提交了自己的主页，获得了老师的认可。</p>
+                        <span>2015-02</span>
+                    </div>
+                </li>
+                <li class="growInfoLi">
+                    <div class="growHead">
+                        <img src="images/growthPic7.jpg" alt="">
+                    </div>
+                    <div class="growText">
+                        <p>迈进大学校门，正式的开启了我的编程之路，那时第一次用C语言排列出一排星星的图案，感觉好神奇，对代码这未知的领域充满了好奇。</p>
+                        <span>2014-09</span>
+                    </div>
+                </li>
+            </ul>
+            <p>数据已经全部加载完啦！</p>
+
+        </div>
+    </div>
+
+    <!--小小愿望-->
+    <div class="wall">
+        <div style="clear: both"></div>
+        <div class="content" id="content">
+        </div>
+    </div>
+
+    <!--留言板-->
+    <div class="message">
+        <div style="clear:both;"></div>
+        <div class="mesBox">
+            <p class="masterText">主人寄语：昨天不能换回来，明天还不确实，而确有把握的就是今天。</p>
+            <input type="text" class="mesName" placeholder="you name">
+            <ul class="mesAuthor">
+                <li class="active"><img src="images/author.png" alt=""></li>
+                <li><img src="images/author1.jpg" alt=""></li>
+                <li><img src="images/author2.jpg" alt=""></li>
+                <li><img src="images/author3.jpg" alt=""></li>
+                <li><img src="images/author4.jpg" alt=""></li>
+                <li><img src="images/author5.jpg" alt=""></li>
+                <li><img src="images/author6.jpg" alt=""></li>
+                <li><img src="images/author7.jpg" alt=""></li>
+            </ul>
+            <!-- <div class="youMes"></div> -->
+            <textarea name="" id="youMes" cols="30" rows="4" class="youMes"></textarea>
+            <button class="submit">提交</button>
+            <div style="clear: both;"></div>
+            <div class="mesHead">
+                <span>大家在说</span>
+            </div>
+            <ul class="allMes">
+                <li>
+                    <img src="images/author.png" alt="">
+                    <div class="allMesText">
+                        <p><span>WangF：</span>欢迎来到我的留言板</p>
+                        <p>2017-9-5<span class="delete">删除</span></p>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/author3.jpg" alt="">
+                    <div class="allMesText">
+                        <p><span>高冷女神：</span>请叫我女神经</p>
+                        <p>2017-9-5<span class="delete">删除</span></p>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/author2.jpg" alt="">
+                    <div class="allMesText">
+                        <p><span>萌萌`哒：</span>快来留下你想说的话吧</p>
+                        <p>2017-9-5<span class="delete">删除</span></p>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/author7.jpg" alt="">
+                    <div class="allMesText">
+                        <p><span>爱在黎明：</span>看我酷不酷，我要浪迹天涯</p>
+                        <p>2017-9-5<span class="delete">删除</span></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <div style="clear: both;"></div>
+    <div class="footFoot">
+        <p>Design by：WangF 2017-6</p>
+    </div>
+    <div class="funVideo">
+        <video src="video/1.mp4" width="700" height="350" controls="controls" loop="loop"></video>
+    </div>
+</div>
 </body>
 </html>
+<script src="js/jquery-3.2.1.js"></script>
+<script>
+    $(function(){
+        var proList = $('.downWorks ul li');
+        var proMask = $('.proMask');
+        var proShow = $('.proMask .proShow');
+        for(var i = 0; i < proList.length; i++){
+            proList[i].index = i;
+            proList.eq(i).click(function(){
+                proMask.show(500);
+                proShow.css('background-image','url("imgs/' + proList[this.index].title + '.jpg")');
+            })
+        }
+        proShow.click(function(event){
+            var event = event || window.event;
+            if(event && event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        })
+        proMask.click(function(){
+            proMask.hide();
+        })
+    })
+
+
+</script>
+
+<script>
+    window.onload = function () {
+
+//	祝愿墙wish
+        //模拟数据库，获取信息
+        var messages = [
+            {"id":1,"name":"WangF","content":"今天继续努力，明天继续加油","time":"2017-08-17 09:00:00"},
+            {"id":2,"name":"WangF","content":"今天天气不错，风和日丽的","time":"2017-09-10 12:40:00"},
+            {"id":3,"name":"帅帅的我","content":"常要说的事儿是乐生于苦，所以开开心心吧","time":"2017-09-18 15:40:00"},
+            {"id":4,"name":"看那妹子","content":"好好工作，好好学习，找个漂亮妹子，生个可爱的孩子，哇咔咔","time":"2017-09-20 16:34:00"},
+            {"id":5,"name":"天马行空","content":"元宵节快乐","time":"2017-09-22 08:40:00"},
+            {"id":6,"name":"空中漫步.","content":"讲个笑话，据说今晚央视的元宵晚会导演和春晚导演是同一个人，真是躲得过初一，躲不过十五。","time":"2017-09-28 01:30:00"},
+            {"id":7,"name":"10.1","content":"好想为祖国庆生","time":"2017-09-30 01:30:00"},
+            {"id":8,"name":"哈哈哈","content":"班主任:“小明，你都十二岁了，还是三年级，不觉得羞愧吗”？。小明:“一点也不觉得，老师你都四十多岁了，不也是年年在三年级混日子吗？羞愧的应该是你”。老师:……","time":"2017-10-03 01:30:00"},
+            {"id":9,"name":"今天你好","content":"生日快乐toME","time":"2017-10-06 00:00:00"}
+        ];
+
+        //需求1：模拟数据库获取信息，然后在页面上生成数组的长度个tip,然后分别问起内容进行修改。
+        //需求2：点击内容，提高层级；点击关闭按钮，删除tip标签；双击顶部，删除标签.....
+
+        //需求1：模拟数据库获取信息，然后在页面上生成数组的长度个tip,然后分别问起内容进行修改。
+        //步骤：
+        //获取相关元素
+        var content = document.getElementById("content");
+
+        //循环生成div标签，然后为innerHTML属性添加内容
+        for(var i=0;i<messages.length;i++){
+            //生成新标签
+            var newDiv = document.createElement("div");
+            //绑定类名和ID
+            newDiv.className = "tip1";
+            newDiv.id = "tip"+messages[i].id;
+            //改变位置
+            var topValue = parseInt(Math.random()*400);
+            var leftValue = parseInt(Math.random()*700);
+            newDiv.style.top = topValue+"px";
+            newDiv.style.left = leftValue+"px";
+            //赋值内容
+            newDiv.innerHTML = '<div class="tip_h" title="双击关闭纸条">'+
+                '<div class="num">第[49568]条 '+messages[i].time+'</div>'+
+                '<div class="close" title="关闭纸条" >×</div>'+
+                '<div class="clr"></div>'+
+                '</div>'+
+                '<div class="tip_c">'+
+                messages[i].content+
+                '</div>'+
+                '<div class="tip_f">'+
+                '<div class="icon">'+
+                '<img src="images/bpic_1.gif" alt="" title="">'+
+                '</div>'+
+                '<div class="name">'+messages[i].name+'</div>'+
+                '<div class="clr"></div>'+
+                '</div>';
+            //把新创建的元素放入content里面
+            content.appendChild(newDiv);
+
+
+            //绑定事件，提高层级
+            newDiv.onclick = fn;
+
+            //点击关闭按钮的时候关闭父盒子。
+            var closeDiv = newDiv.getElementsByClassName("close")[0];
+            closeDiv.onclick = function () {
+                //不能用newDiv，因为在页面加载的时候newDiv，已经变成最后一个了，当你点击的时候，用远关闭的是最后的那个div。
+//                content.removeChild(newDiv);
+                content.removeChild(this.parentNode.parentNode);
+            }
+
+            //双击关闭按钮类名叫做tip_h
+            var dbDiv = newDiv.getElementsByClassName("tip_h")[0];
+            dbDiv.ondblclick = function () {
+                //不能用newDiv，因为在页面加载的时候newDiv，已经变成最后一个了，当你点击的时候，用远关闭的是最后的那个div。
+//                content.removeChild(newDiv);
+                content.removeChild(this.parentNode);
+            }
+
+        }
+
+        var index = 1;
+        function fn(){
+            this.style.zIndex = index;
+            index++;
+        }
+
+
+//    留言板，message
+        var inpName = document.getElementsByClassName('mesName')[0];
+        var inpText = document.getElementsByClassName('youMes')[0];
+        var inpSubmit = document.getElementsByClassName('submit')[0];
+        var authorPics = document.getElementsByClassName('mesAuthor')[0].getElementsByTagName('li');
+        var allMes = document.getElementsByClassName('allMes')[0];
+        var liArr = allMes.getElementsByTagName('li');
+        var deleteBtn = document.getElementsByClassName('delete');
+
+        var mesName;
+        inpName.onkeyup = function () {
+            mesName = inpName.value;
+            if (mesName.length > 15) {
+                inpName.disabled = 'disabled';
+            }
+        }
+        var mesText;
+        inpText.onkeyup = function () {
+            mesText = inpText.value;
+            // console.log(inpText.value);
+            if (mesText.length > 80) {
+                inpText.disabled = 'disabled';
+            }
+        }
+        var picIndex = 0;
+        for (var i = 0; i < authorPics.length; i++) {
+            authorPics[i].index = i;
+            authorPics[i].onclick = function () {
+                for (var j = 0; j < authorPics.length; j++) {
+                    authorPics[j].className = '';
+                }
+                authorPics[this.index].className = 'active';
+                picIndex = this.index;
+            }
+        }
+        var date = new Date();
+        inpSubmit.onclick = function () {
+            if (mesName == undefined || mesText == undefined) {
+                alert('姓名或者内容为空');
+            }
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var day = date.getDate();
+            var str = '<img src="images/author' + picIndex + '.jpg" alt=""><div class="allMesText"><p><span>' + mesName + '：</span>' + mesText + '</p><p>' + year + '-' + (month + 1) + '-' + day + '<span class="delete">删除</span></p></div>';
+            var li = document.createElement('li');
+            li.innerHTML = str;
+            allMes.insertBefore(li, liArr[0]);
+            var deleteBtn = document.getElementsByClassName('delete');
+            for (var i = 0; i < deleteBtn.length; i++) {
+                deleteBtn[i].onclick = function () {
+                    this.parentNode.parentNode.parentNode.style.display = 'none';
+                }
+            }
+        }
+        for (var i = 0; i < deleteBtn.length; i++) {
+            deleteBtn[i].onclick = function () {
+                this.parentNode.parentNode.parentNode.style.display = 'none';
+            }
+        }
+
+    }
+
+</script>
+
+<script>
+    $(function () {
+//	    导航栏切换
+        var navList = $('.nav a');
+        var turnArr = ['.mainPage', '.learning', '.myWorks', '.growthRoad', '.wall', '.message'];
+        for (var i = 0; i < navList.length; i++) {
+            navList.eq(0).css('backgroundColor', '#f15694');
+            navList[i].index = i;
+            navList.eq(i).click(function () {
+                for (var j = 0; j < navList.length; j++) {
+                    navList.eq(j).css('backgroundColor', '');
+                    $(turnArr[j]).hide();
+                }
+                $(this).css('backgroundColor', '#f15694');
+                $(turnArr[this.index]).show(1000);
+
+            })
+        }
+
+        var gather = $('.gather a span');
+        for(var i = 0; i < gather.length; i++){
+            gather[i].index = i;
+            gather.eq(i).click(function(){
+                var gatherIndex = this.index % 4;
+                console.log(gatherIndex);
+                for (var j = 0; j < turnArr.length; j++) {
+                    navList.eq(j).css('backgroundColor', '');
+                    $(turnArr[j]).hide();
+                }
+                if(gatherIndex == 0){
+                    navList.eq(1).css('backgroundColor', '#f15694');
+                    $('.learning').show(1000);
+                }else if(gatherIndex == 1){
+                    navList.eq(2).css('backgroundColor', '#f15694');
+                    $('.myWorks').show(1000);
+                }else if(gatherIndex == 2){
+                    navList.eq(3).css('backgroundColor', '#f15694');
+                    $('.myResume').show(1000);
+                }else if(gatherIndex == 3){
+                    navList.eq(6).css('backgroundColor', '#f15694');
+                    $('.message').show(1000);
+                }
+            })
+        }
+
+
+
+
+
+        // 播放视频
+        var _left = ($(window).width() - 700) / 2;
+        var _top = ($(window).height() - 350) / 2;
+
+        var funTimes = $('.funTime');
+        var funVideo = $('.funVideo');
+        var videoSrc = $('.funVideo video');
+        // console.log(videoSrc.attr("src"));
+        var bodyMask = $('.bodyMask');
+
+        for (var i = 0; i < funTimes.length; i++) {
+            funTimes[i].index = i;
+            funTimes.eq(i).click(function () {
+                console.log(this.index);
+                videoSrc.attr('src', 'video/' + (this.index + 1) + '.mp4');
+                funVideo.show(500);
+                bodyMask.show();
+            })
+        }
+        bodyMask.click(function () {
+            videoSrc.each(function(){
+                this.pause();
+            })
+            bodyMask.hide();
+            funVideo.hide(500);
+        })
+
+        var comList = $('.search .comment .comContent li');
+        var arr = Array.from(comList);
+        clearInterval(timer2);
+        var timer2 = setInterval(function () {
+            for (var i = 0; i < arr.length - 1; i++) {
+                $(arr[i]).css({'position': 'absolute', 'top': (i * 70)});
+                $(arr[i]).animate({'top': ((i + 1) * 70)}, 1000);
+            }
+            $(arr[arr.length - 1]).css({'position': 'absolute', 'top': 0, 'display': 'none'}).stop().show(3000);
+            var arr1 = arr.pop();
+            arr.unshift(arr1);
+        }, 5000);
+
+
+//        轮播图
+        var showImgs = $('.showImg img');
+        var imgList = $('.banNav li');
+        var banMask = $('.banMask');
+        var timer = null;
+        imgList.mouseenter(function () {
+            clearInterval(timer);
+            var index = $(this).index();
+            showImgs.eq(index).stop().fadeIn(500).siblings('img').fadeOut();
+            banMask.css({
+                'top': index * 60 + 'px'
+            });
+            timer = setInterval(function () {
+                index++;
+                index %= 5;
+                showImgs.eq(index).stop().fadeIn(500).siblings('img').fadeOut();
+                banMask.css({
+                    'top': index * 60 + 'px'
+                });
+            }, 2500);
+        }).triggerHandler('mouseenter');    //最开始开启
+
+        // 个人模板
+        var turnLeft = $('.myTemplate .blogTemplate span').eq(0);
+        var turnRight = $('.myTemplate .blogTemplate span').eq(1);
+        var myTemplate = $('.myTemplate .blogTemplate ul');
+        var turnIndex = 0;
+        turnLeft.click(function () {
+            if (turnIndex < 5) {
+                turnIndex++;
+                myTemplate.css({
+                    'transform': 'translateX(' + (-220 * turnIndex) + 'px)'
+                })
+            }
+        })
+        turnRight.click(function () {
+            if (turnIndex > 0) {
+                turnIndex--;
+                myTemplate.css({
+                    'transform': 'translateX(' + (-220 * turnIndex) + 'px)'
+                })
+            }
+        });
+
+
+        // hot
+        var hotList = $('.search .hot .hot_title li');
+        var hotBox = $('.search .hot .hotContent');
+        hotList.eq(0).css({'color': 'blue', 'border-bottom': '2px solid blue'}).siblings('li').css({
+            'color': '#484848',
+            'border': 'none'
+        });
+        for (var i = 0; i < hotList.length; i++) {
+            hotList[i].index = i;
+            hotList.eq(i).click(function () {
+                $(this).css({
+                    'color': 'blue',
+                    'border-bottom': '2px solid blue'
+                }).siblings('li').css({'color': '#484848', 'border': 'none'});
+                hotBox.stop().animate({'left': -this.index * 300}, 1000);
+            });
+        }
+    })
+
+
+    //	我的作品
+    $(function () {
+        // console.log(1);
+        var worksLink1 = $('#worksLink1');
+        var worksLink2 = $('#worksLink2');
+
+        var upWorks = $('.upWorks');
+        var downWorks = $('.downWorks');
+        worksLink1.click(function () {
+            downWorks.stop().fadeOut(1000);
+            upWorks.stop().fadeIn(2000);
+        });
+        worksLink2.click(function () {
+            upWorks.stop().fadeOut(1000);
+            downWorks.stop().fadeIn(2000);
+        });
+    })
+</script>
+

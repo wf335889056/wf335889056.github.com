@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		.bg_box{
+			width: 400px;
+			height: 202px;
+			background-color: rgba(255,0,0,1);
+			position: fixed;
+			left: 0;
+			bottom: 30px;
+			border-top-right-radius: 20px;
+			padding-right: 2px;
+		}
+		.bg_box .turn{
+			float: right;
+			color: #fff;
+			width: 20px;
+			height: 40px;
+			font-size: 40px;
+			line-height: 40px;
+			text-align: center;
+			/*line-height: 202px;*/
+			cursor: pointer;
+			border-top-right-radius: 20px;
+			position: absolute;
+			top: 50%;
+			margin-top: -20px;
+			right: 0;
+		}
+		/*.bg_box .turn span{
+			display: block;
+			
+			background-color: blue;
+			position: absolute;
+			top: 50%;
+			margin-top: -15px;
+			line-height: 30px;
+			font-size: 30px;
+			text-align: center;
+			color: #fff;
+		}*/
+		.turnleft{
+			transform: translate(-382px,0);
+			transition: 2s;
+		} 
+		.turnright{
+			transform: translate(0,0);
+			transition: 2s;
+		}
+		.box{
+			width: 380px;
+			height: 200px;
+			border: 1px solid #000;			
+			border-top-right-radius: 120px;
+			background-color: greenyellow;
+			/*background: url('');*/
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-size: 380px 200px;
+			background-position: center;
+		}
+		.music_control{
+			width: 100%;
+			height: 50px;
+			/*background-color: pink;*/
+			position: absolute;
+			left: 0;
+			bottom: 10px;
+			line-height: 50px;
+			z-index: 888;
+		}
+		.music_control #prev_btn,.music_control #next_btn{
+			display: inline-block;
+			width: 25px;
+			height: 25px;						
+			vertical-align: middle;
+		}
+		.music_control #prev_btn{
+			background: url('images/prev.png') no-repeat 0 0;
+			-webkit-background-size: 25px 25px;
+		}
+		.music_control #next_btn{
+			background: url('images/next.png') no-repeat 0 0;
+			-webkit-background-size: 25px 25px;
+		}
+		.music_control #play_pause_btn{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			background: url('images/play.png') no-repeat 0 0;
+			-webkit-background-size: 30px 30px;
+			vertical-align: middle;
+			/*margin-top: 2px;*/
+		}
+		.progress{
+			display: inline-block;
+			width: 170px;
+			height: 10px;
+			border-radius: 3px;
+			/*vertical-align: middle;*/
+			background-color: rgba(255,255,255,0.5);
+			position: relative;
+			cursor: pointer;
+		}
+		.progress .current_progress{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 10px;
+			border-radius: 3px;
+			background-color: rgba(0,0,0,0.5);
+			width: 50px;
+		}
+		.control_time{
+			display: inline-block;
+			position: absolute;
+			right: 5px;
+		}
+		/*音量*/
+		.volume{
+			width: 130px;
+			height: 30px;
+			position: absolute;
+			top: 0;
+			left: 5px;
+			transform: rotate(15deg);
+			transform-origin: 0 0;
+			cursor: pointer;
+			z-index: 999;
+			/*background-color: red;*/
+		}
+		.volume .volume_change{
+			/*display: inline-block;*/
+			float: left;
+			width: 30px;
+			height: 30px;
+			background: url('images/volume.png') no-repeat 0 0;
+			-webkit-background-size: 30px 30px;
+			
+		} 
+		.volume .volume_progress{
+			/*display: inline-block;*/
+			float: left;
+			margin-top: 5px;
+			width: 100px;
+			height: 20px;
+			background-color: rgba(255,255,255,0.6);
+			border-radius: 3px;
+			position: relative;
+			display: none;
+			/*line-height: 20px;*/
+			/*vertical-align: middle;*/
+		}
+		.volume .volume_progress .volume_bg_progress{
+			width: 90px;
+			height: 6px;
+			background-color: rgba(0,0,0,0.4);
+			position: absolute;
+			top: 50%;
+			margin-top: -3px;
+			left: 5px;
+			border-radius: 3px;
+		}
+		.volume .volume_progress .volume_bg_progress .volume_current_progress{			
+			width: 15px;
+			height: 6px;
+			background-color: deepskyblue;
+			position: absolute;
+			left: 0;
+			top: 0;
+			border-radius: 3px;
+		}
+
+		.box .theme{
+			width: 180px;
+			height: 180px;
+			border: 1px solid #000;
+			margin: 5px auto;
+			border-radius: 55%;
+			/*background: url('images/waw5.jpg') no-repeat center center;*/
+			background-size: 180px 180px;
+		}
+
+	</style>
+</head>
+<body>
+<div class="bg_box turnleft">
+	<div class="turn">></div>
+	<div class="box">
+		<audio src="" id="music"></audio>
+		<div class="music_control">
+			<!-- <a href="javascript:;" id="play_pause_btn">播放</a> -->
+			<!-- 上一个、播放暂停、下一个 -->
+			<a href="javascript:;" id="prev_btn"></a>
+			<a href="javascript:;" id="play_pause_btn"></a>
+			<a href="javascript:;" id="next_btn"></a>
+			<!-- 进度条-->
+            <div class="progress">
+                <div class="current_progress"></div>
+            </div>
+			<!-- 右部显示时间 -->
+			<div class="control_time">
+				<span id="current_time">00:00</span><span>/</span><span id="total_time"></span>
+			</div>	
+		</div>
+		<!-- 音量	 -->
+		<div class="volume">
+			<span class="volume_change">
+			</span>
+			<div class="volume_progress">
+				<div class="volume_bg_progress">
+					<span class="volume_current_progress"></span>
+				</div>				
+			</div>
+		</div>
+		<div class="theme"></div>
+<!-- 		<div class="theme_box2 theme"></div>
+		<div class="theme_box3 theme"></div> -->
+
+
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	var currentIndex = 0;
+	var arr = ["waw.mp3","zm.mp3","gx.mp3"];
+	var imgArr = ["waw1","zm1","gx1"];
+	var themeArr = ["waw5","zm5","gx5"];
+	window.onload = function(){
+		var bgBox = document.getElementsByClassName('bg_box')[0];
+		var box = document.getElementsByClassName('box')[0];
+		var themeBox = document.getElementsByClassName('theme')[0];
+		var turn = document.getElementsByClassName('turn')[0];
+		var music = document.getElementById('music');
+		var play_pause_btn = document.getElementById('play_pause_btn');
+		var prev = document.getElementById('prev_btn');
+		var next = document.getElementById('next_btn');
+		var current_progress = document.getElementsByClassName('current_progress')[0];
+		var progress = document.getElementsByClassName('progress')[0];
+
+		
+
+		music.src = "audio/" + arr[currentIndex];
+		box.style.backgroundImage = "url(images/" + imgArr[currentIndex] + ".jpg";
+		themeBox.style.backgroundImage = "url(images/" + themeArr[currentIndex] + ".jpg";
+		box.style.backgroundSize = "380px auto";
+
+
+		autoPlay();
+		// console.log(bool);
+		turn.onclick = function(){
+			// bgBox.style.transform = "translate(-380px,0)";
+			if(bgBox.className == "bg_box" || bgBox.className == "bg_box turnright"){
+				bgBox.className = 'bg_box turnleft';
+				turn.style.transform = "rotate(0deg)";
+				animate(bgBox,255,0,0,1);
+				// turn.innerHTML = ">";
+			}else{
+				bgBox.className = 'bg_box turnright';
+				turn.style.transform = "rotate(180deg)";
+				animate(bgBox,255,255,255,0.4);
+				// turn.innerHTML = "<";
+			}
+			
+		}
+
+		//变色
+		var rc = 0;
+		var gc = 0;
+		var bc = 0;
+		var opc = 0;
+		function animate(obj,red,green,blue,opcity){
+			clearInterval(obj.timer);		
+			obj.timer = setInterval(function(){
+				var speed1 = (red - rc) / 10;
+				var speed2 = (green - gc) / 10;
+				var speed3 = (blue - bc) / 10;
+				var speed4 = (opcity - opc) / 10;
+				// obj.style.left = obj.offsetLeft + speed + "px";
+				speed1 = speed1>0?Math.ceil(speed1):Math.floor(speed1);
+				speed2 = speed2>0?Math.ceil(speed2):Math.floor(speed2);
+				speed3 = speed3>0?Math.ceil(speed3):Math.floor(speed3);
+				// speed4 = speed4>0?Math.ceil(speed4):Math.floor(speed4);
+
+				rc = rc + speed1;
+				gc = gc + speed2;
+				bc = bc + speed3;
+				opc = opc + speed4;
+				
+				// console.log(rc);
+				obj.style.backgroundColor = 'rgba('+rc+','+gc+','+bc+','+ opc +')';
+				// obj.style.backgroundColor = "rgba(111,111,111,1)";
+				if(rc == red && gc == green && bc == blue && (opcity-opc)<0.1){
+					clearInterval(obj.timer);
+					red = rc;
+					green = gc;
+					blue = bc;
+					opcity = opc;
+				}
+			},25);
+		}
+
+		play_pause_btn.onclick = function(){
+			
+			if(music.paused){
+				play_pause_btn.style.backgroundImage = "url('images/pause.png')";
+				music.play();
+				themeTurn();				
+			}else{
+				play_pause_btn.style.backgroundImage = "url('images/play.png')";
+				music.pause();
+				clearInterval(timer);
+			}
+		}
+
+		prev_btn.onclick = function(){
+			
+			currentIndex--;
+			if(currentIndex < 0){
+				currentIndex = arr.length - 1;
+			}
+			music.src = "audio/" + arr[currentIndex];
+			autoPlay();
+			music.play();
+			play_pause_btn.style.backgroundImage = "url('images/pause.png')";
+			box.style.backgroundImage = "url(images/" + imgArr[currentIndex] + ".jpg";
+			themeBox.style.backgroundImage = "url(images/" + themeArr[currentIndex] + ".jpg";
+			themeTurn();
+		}
+
+		next_btn.onclick = function(){			
+			currentIndex++;
+			if(currentIndex >= arr.length){
+				currentIndex = 0;
+			}
+			music.src = "audio/" + arr[currentIndex];
+			autoPlay();
+			music.play();
+			play_pause_btn.style.backgroundImage = "url('images/pause.png')";
+			box.style.backgroundImage = "url(images/" + imgArr[currentIndex] + ".jpg";
+			themeBox.style.backgroundImage = "url(images/" + themeArr[currentIndex] + ".jpg";
+			themeTurn();
+		}
+
+
+		progress.onmousedown = function(event){
+			var e = event ? event　: window.event;
+			//获取鼠标点击时距离左侧的相对距离，当前进度条
+			var pageX = e.pageX - this.offsetLeft;
+			// console.log(pageX);
+			// current_progress.style.width = pageX + "px";
+			// console.log(bili);
+			//当前时间/总时间 = 当前进度条/总进度条
+			//当前时间 = 当前进度条*总时间/总进度条。
+			// console.log(duration);
+			music.currentTime = pageX*duration/progress.offsetWidth;
+		}
+
+		//音量
+		var volume = document.getElementsByClassName('volume')[0];
+		var volumeChange = document.getElementsByClassName('volume_change')[0];
+		var vProgress = document.getElementsByClassName('volume_progress')[0];
+		var vcProgress = document.getElementsByClassName('volume_current_progress')[0];
+		var volume_deg = 0;
+		volumeChange.onmousedown = function(){
+			vProgress.style.display = "block";
+		}
+
+		volume.onmousedown = function(event){
+
+			var e = event ? event : window.event;
+			//鼠标按下时的高度
+			var yy = e.pageY;
+			var now_volume = vcProgress.offsetWidth;
+			// console.log(now_volume);
+			document.onmousemove = function(event){
+				var e = event ? event : window.event;
+				// 鼠标移动时的高度
+				var y = e.pageY;
+				// console.log(y - yy);
+
+				// 转90deg 音量90 转多少deg，音量变多少；
+				volume_deg = y-yy;
+				if((volume_deg + now_volume) > 90){
+					volume_deg  = 90 - now_volume;
+				}else if((volume_deg + now_volume) < 0){
+					volume_deg  = 0 - now_volume;
+				}
+				volume.style.transform = "rotate(" + (volume_deg + now_volume) + "deg)";
+				vcProgress.style.width = (volume_deg + now_volume) + "px";
+				// volume_deg范围为-15~75
+				//0~90
+				music.volume = (volume_deg+now_volume)/100;
+
+				// console.log(music.volume);
+
+				//禁止文本框选中
+				window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+			}
+			document.onmouseup = function(){
+				vProgress.style.display = "none";
+				document.onmousemove = null;
+			}
+		}	
+	}
+	var timer
+	var i = 0;
+	function themeTurn(){
+		var themeBox = document.getElementsByClassName('theme')[0];	
+		clearInterval(timer);			
+		timer = setInterval(function(){
+			themeBox.style.transform = "rotate(" + i + "deg)";
+			i++;
+		},25);		
+	}
+
+	//总共时间与当前时间
+	var duration;
+	var current_time;
+	var bili;
+	function autoPlay(){
+		
+	music.ondurationchange = function(){		//不能在页面加载完毕时
+		var totalTime = document.getElementById('total_time');
+		duration = music.duration;
+		var minute = parseInt(duration/60);
+		var second = parseInt(duration%60);
+		minute = minute < 10 ? ("0" + minute) : minute;
+		second = second < 10 ? ("0" + second) : second;
+		totalTime.innerHTML = minute + ":" + second;
+	}
+	music.ontimeupdate = function(){
+		var box = document.getElementsByClassName('box')[0];
+		var themeBox = document.getElementsByClassName('theme')[0];
+		var currentTime = document.getElementById('current_time');
+		var current_progress = document.getElementsByClassName('current_progress')[0];
+		var progress = document.getElementsByClassName('progress')[0];
+		current_time = music.currentTime;
+		var minute = parseInt(current_time/60);
+		var second = parseInt(current_time%60);
+		minute = minute < 10 ? ("0" + minute) : minute;
+		second = second < 10 ? ("0" + second) : second;
+		currentTime.innerHTML = minute + ":" + second;
+		// console.log(duration);
+		// console.log(currentTime);
+		//当前时间/总时间 = 当前进度条/总进度条
+		bili = current_time/duration;
+		// console.log(bili);
+		current_progress.style.width = bili*progress.offsetWidth + "px";
+		// console.log(current_progress.style.width);
+		// if(bili == 1){
+		// 	play_pause_btn.style.backgroundImage = "url('images/play.png')";
+		// 	music.pause();
+		// }
+
+		//换歌
+		var bool = false;
+		//自动播放到下一个，点击上一个，点击下一个				
+		if(bili == 1){
+			currentIndex++;
+			if(currentIndex == arr.length){
+				currentIndex = 0;
+			}else if(currentIndex < 0){
+				currentIndex = arr.length - 1;
+			}
+			bool = true;
+		}
+		if(bool){
+			music.src = "audio/" + arr[currentIndex];
+			autoPlay();
+			music.play();
+			box.style.backgroundImage = "url(images/" + imgArr[currentIndex] + ".jpg";
+			themeBox.style.backgroundImage = "url(images/" + themeArr[currentIndex] + ".jpg";
+		}
+
+	}
+	}
+
+</script>
+
+
+
+
+
+
+
+

@@ -1,0 +1,782 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+.clearfix::before,
+.clearfix::after{
+	content:'';
+	display: block;
+	line-height: 0;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+// html,body{
+// 	width: 100%;
+// }
+.pageContainer{
+	width: 710px;
+	margin: 0 auto;
+}
+.placePage{
+	/* height: 3000px; */
+	background-color: #ddd;
+}
+.placePage .headTitle{
+	width: 100%;
+	height: 80px;
+	background-color: #fff;
+	text-align: center;
+	border-bottom: 1px solid #aaa;
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1111;
+}
+.placePage .headTitle h2{
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 20px;
+	font-size: 34px;
+	color: #333;
+	text-decoration: none;
+}
+.placePage .headTitle > a > span:nth-of-type(1){
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 40px;
+	margin: 15px 0 0 20px;
+	background: url('../images/quyudingweitubiao_03.png') center center no-repeat;
+	background-size: 25px 40px;
+}
+.placePage .headTitle > span:last-child{
+	display: inline-block;
+	float: right;
+	width: 40px;
+	height: 40px;
+	margin: 15px 30px 0 0;
+	background: url('../images/banner-details-page_03.png') center center no-repeat;
+	background-size: 40px 40px;
+}
+.placePage .clearHeight{
+	height: 80px;
+}
+
+.placePage .placeContent{
+	background-color: #fff;
+}
+
+.placePage .place{
+	margin-top: 0px;
+	width: 100%;
+	position: relative;
+	// border-bottom: 1px solid #dfdfdf;
+}
+.placePage .place > img{
+	width: 750px;
+	height: 360px;
+	margin-left: -20px;
+}
+.placePage .place h3{
+	font-size: 30px;
+	margin-top: 20px;
+}
+.placePage .place p i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 3px;
+	background: url('../images/banner-details-page_18.png') center center no-repeat;
+}
+.placePage .place p i:last-child{
+	width: 58px;
+	height: 28px;
+	border-radius: 5px;
+	color: #dbdbdb;
+	background: #cbcbcb url('../images/banner-details-page_54.png') center center no-repeat;
+	background-size: 58px 28px;
+	position: relative;
+	top: 4px;
+}
+.placePage .place h4 span{
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	position: relative;
+	top: 15px;
+	background: url('../images/banner-details-page_58.png') center center no-repeat;
+}
+.placePage .place h4{
+	font-size: 26px;
+	color: #686868;
+	margin-bottom: 30px;
+	// margin-top: 26px;
+}
+
+.placePage .placeModel{
+	width: 618px;
+	// height: 380px;
+	margin: 0 auto;
+	background-color: #dbdbdb;
+	padding-top: 40px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	border-radius: 10px;
+}
+.placePage .placeModel .everyModel{
+	// width: 100%;
+	margin-bottom: 20px;
+}
+.placePage .placeModel .placeModelLogo1 span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url('../images/place_home.png') center center no-repeat;
+	background-size: 40px 40px;
+	float: left;
+}
+.placePage .placeModel .placeModel1{
+	float: left;
+	margin-left: 10px;
+	
+}
+.placePage .placeModel .placeModel1 h4{
+	font-size: 30px;
+	color: #282828;
+}
+.placePage .placeModel .placeModel1 p{
+	font-size: 26px;
+	color: #686868;
+}
+
+.placePage .placeStyle h2{
+	font-size: 30px;
+	color: #282828;
+	margin: 30px 0 20px 0;
+}
+.placePage .placeStyle p{
+	font-size: 26px;
+	color: #666;
+	text-indent: 2em;
+	line-height: 1.5;
+	padding: 0 5px;
+	// height: 100px;
+	// overflow: hidden;
+}
+.placePage .placeStyle a{
+	display: block;
+	height: 60px;
+	width: 120px;
+	// background-color: pink;
+	text-decoration: none;
+	font-size: 28px;
+	color: #666;
+	line-height: 40px;
+	margin-top: 20px;
+	// padding-left: 10px;
+}
+.placePage .placeStyle a i{
+	font-style: normal;
+	width: 36px;
+	height: 18px;
+	line-height: 36px;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+
+	// top: 3px;
+}
+.placePage .placeStyle a i span{
+	text-decoration: none;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	position: absolute;
+	bottom: 0;
+}
+.placePage .placeStyle a i span.turnTop{
+	bottom: -18px;
+}
+
+.placePage .allplace{
+	margin-top: 20px;
+	width: 750px;
+	padding-top: 30px;
+	background-color: #fff;
+	// height: 272px;
+
+	/* height: 650px; */
+}
+.placePage .allplace .allplaceContent{
+	width: 100%;
+	height: 212px;
+	height: 242px;
+	border-bottom: 1px solid #ddd;
+}
+
+.placePage .allplace img{
+	width: 210px;
+	height: 212px;
+	float: left;
+}
+.placePage .allplace .allplaceText{
+	float: left;
+	height: 212px;
+	margin-left: 10px;
+	position: relative;
+}
+.placePage .allplace .allplaceText p{
+	margin-top: 10px;
+}
+.placePage .allplace .allplaceText h3{
+	font-size: 26px;
+	color: #ff9914;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+.placePage .allplace .allplacePice{
+	width: 100%;
+	margin-top: 38px;
+	height: 70px;
+}
+.placePage .allplace .allplacePice span{
+	// display: inline-block;
+	float: left;
+	font-size: 20px;
+	color: #fff;
+	background-color: #ff9912;
+}
+.placePage .allplace .allplacePice span:nth-child(1){
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;	
+	// background: url('../images/');	
+}
+.placePage .allplace .allplacePice span:nth-child(2){
+	width: 60px;
+	height: 30px;
+	margin-left: 20px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	
+}
+.placePage .allplace .allplacePice span:last-child{
+	float: right;
+	color: #ff9914;
+	background-color: #fff;
+	font-size: 26px;
+}
+.placePage .allplace .allplacePice a{
+	float: right;
+	width: 40px;
+	height: 30px;
+	background-color: #fff;
+	padding-top: 10px;
+}
+.placePage .allplace .allplacePice a i{
+	font-style: normal;
+	width: 36px;
+	height: 18px;
+	line-height: 36px;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	font-size: 36px;
+}
+.placePage .allplace .allplacePice a.rotateSin{
+
+	transform: rotate(180deg);
+}
+.placePage .allplace .allplacePice a i span:last-child{
+	text-decoration: none;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	position: absolute;
+	bottom: 3px;
+	font-size: 36px;
+	color: #666;
+}
+// 场次
+.testSin{
+	width: 100%;
+}
+.lineSin{
+	width: 750px;
+	margin-left: -20px;
+	border: 1px solid #ddd;
+}
+.placePage .allplace .session{
+    height: 280px;
+	
+    overflow: hidden;
+}
+.placePage .allplace .session .sin{
+	border-bottom: 1px solid #ddd;
+	padding: 15px 0;
+} 
+.placePage .allplace .session .sin .leftSin{
+	float: left;
+	font-size: 24px;
+	line-height: 1.2;
+}
+.placePage .allplace .session .sin .rightSin{
+	float: right;
+}
+.placePage .allplace .session .sin .rightSin .moneySin{
+	float: left;
+	line-height: 1.2;
+	font-size: 24px;
+}
+.placePage .allplace .session .sin .rightSin .reserveSin{
+	float: right;
+	height: 40px;
+	background-color: #ff9914;
+	width: 80px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	font-size: 28px;
+	border-radius: 10px;
+	position: relative;
+	top: 6px;
+}
+.placePage .allplace .session .sin .rightSin .moneySin p{
+    color: #FF9914;
+	
+    font-size: 28px;
+}
+.placePage .allplace .session .sin .rightSin .moneySin del{
+    color: #888;
+	
+}
+.placePage .allplace .session .allSin{
+	border: none;
+}
+.placePage .allplace .session .reserveSin a{
+	text-decoration: none;
+	color: #fff;
+}
+
+// 日历
+.testData{
+	width: 100%;
+}
+.placePage .data{
+	width: 100%;
+	background-color: #fff;
+	margin-top: 20px;
+	padding-top: 30px;
+	overflow: hidden;
+}
+.placePage .data h2{
+	display: inline-block;
+	line-height: 40px;
+	font-size: 30px;
+	color: #282828;
+}
+
+.placePage .data  h3{
+	text-align: center;
+	font-size: 34px;
+	color: #888;
+}
+.placePage .data  h3 span:nth-child(1),.placePage .data  h3 span:nth-child(3){
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 0 10px;
+	// background-color: pink;
+}
+
+
+.turnleft{
+	transform: translateX(-690px);
+	transition: all 1s;
+} 
+.turnright{
+	transform: translateX(0);
+	transition: all 1s;
+}
+.placePage .table{
+	width: 100%;
+	height: 490px;
+}
+.placePage .moveTable{
+	width: 1500px;	
+	overflow: hidden;
+}
+.placePage table{
+	width: 100%;
+}
+.placePage .table1,.placePage .table2{
+	// margin: 0 20px;
+	font-size: 26px;
+	color: #888;
+	float: left;
+}
+.placePage table td{
+	width: 64px;
+	text-align: center;
+	line-height: 44px;
+	height: 44px;
+	overflow: hidden;
+}
+.placePage table tr:nth-child(3) td:nth-child(2),.placePage table tr:nth-child(3) td:nth-child(3),.placePage table tr:nth-child(3) td:nth-child(4){
+	background-color: #ddd;
+	font-size: 26px;
+	height: 44px;
+	line-height: 22px;
+}
+.placePage table tr:nth-child(3) td:nth-child(2) span,.placePage table tr:nth-child(3) td:nth-child(3) span,.placePage table tr:nth-child(3) td:nth-child(4) span{
+	background-color: #ddd;
+	font-size: 18px;
+}
+.placePage table tr:nth-child(3) td:nth-child(4) ~ td, .placePage table tr:nth-child(3) ~ tr td{
+	color: #282828;
+}
+
+
+// 玩家评论comment部分
+// .test222{
+// 	width: 750px;
+// }
+.placePage .comment{
+	width: 100%;
+	// height: 300px;
+	background-color: #fff;
+	margin-top: 20px;
+	padding-top: 30px;
+	padding-bottom: 100px;
+	position: relative;
+	overflow: hidden;
+}
+.placePage .comment h2{
+	font-size: 30px;
+	color: #282828;
+	margin-bottom: 20px;
+}
+.placePage .comment .speaker{
+	border-bottom: 1px solid #ddd;
+}
+.placePage .comment .speaker .headImg{
+	float: left;
+}
+.placePage .comment .speaker .headImg span{
+	display: block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: url('../images/desiger_header.jpg') center center no-repeat;
+	background-size: 80px 80px;
+}
+.placePage .comment .speaker .speakerText{
+	float: left;
+	margin-left: 10px;
+	color: #686868;
+}
+.placePage .comment .speaker .speakerText h4{
+	font-size: 30px;
+	margin: 0 0 20px 0;
+}
+.placePage .comment .speaker .speakerText p span{
+	display: inline-block;
+	line-height: 30px;
+	font-size: 26px;
+	position: relative;
+	top: -5px;
+	color: #888;
+	// padding-left: 10px;
+}
+.placePage .comment .speaker .speakerText p i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 3px;
+	background: url('../images/banner-details-page_18.png') center center no-repeat;
+}
+.placePage .comment .speaker .speakerText p:last-child{
+	font-size: 26px;
+	color: #888;
+	margin: 20px 0 30px 0;
+}
+.placePage .comment .speaker2{
+	margin-top: 20px;
+	border: none;
+}
+.placePage .comment .speaker2 .headImg span{
+	background-image: url('../images/desiger_header2.jpg');
+	
+}
+.placePage .comment .allComment{
+	font-size: 26px;
+	color: #686868;
+	line-height: 40px;
+	text-align: center;
+	display: block;
+	width: 180px;
+	height: 40px;
+	border: 1px dashed #888;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	margin-left: -90px;
+	text-decoration: none;
+}
+
+
+// 交易规则 rule
+.test333{
+	width: 750px;
+}
+.placePage .rule{
+	width: 100%;
+	background-color: #fff;
+	margin-top: 20px;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	position: relative;
+}
+.placePage .rule h2{
+	font-size: 30px;
+	color: #282828;
+}
+
+
+.placePage .rule .everyModel{
+	// width: 100%;
+	margin-top: 20px;
+}
+.placePage .rule .ruleModelLogo1{
+	float: left;
+}
+.placePage .rule .ruleModelLogo1 span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url('../images/place_home.png') center center no-repeat;
+	background-size: 40px 40px;
+	// float: left;
+}
+.placePage .rule .ruleModelText1{
+	float: left;
+	width: 90%;
+	// margin-left: 50px;
+	margin-left: 10px;
+}
+.placePage .rule .ruleModelText1 h4{
+	font-size: 30px;
+	color: #282828;
+	margin-bottom: 15px;
+}
+.placePage .rule .ruleModelText1 p{
+	font-size: 26px;
+	color: #686868;
+	line-height: 1.5;
+}
+.placePage .rule .ruleModel2 .ruleModelText1 h4:last-of-type{
+	margin-top: 15px;
+}
+
+
+.placePage .rule a{
+	display: block;
+	height: 60px;
+	width: 120px;
+	// background-color: pink;
+	text-decoration: none;
+	font-size: 28px;
+	color: #666;
+	line-height: 40px;
+	margin-top: 20px;
+	// padding-left: 10px;
+}
+.placePage .rule a i{
+	font-style: normal;
+	width: 36px;
+	height: 18px;
+	line-height: 36px;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+
+	// top: 3px;
+}
+.placePage .rule a i span{
+	text-decoration: none;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	position: absolute;
+	bottom: 0;
+}
+.placePage .rule a i span.turnTop{
+	bottom: -18px;
+}
+
+
+// 为您推荐
+.test321{
+	width: 750px;
+}
+.test3211{
+	width: 750px;
+	height: 20px;
+	background-color: #ddd;
+}
+.placePage .recommend{
+	width: 100%;
+	background-color: #fff;
+	// margin-top: 20px;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	position: relative;
+}
+.placePage .recommend h2{
+	font-size: 30px;
+	color: #282828;
+}
+.placePage .recommendPlace{
+	margin-top: 30px;
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid #dfdfdf;
+}
+.placePage .recommendPlace > img{
+	width: 710px;
+	height: 360px;
+}
+.placePage .recommendPlace h3{
+	font-size: 30px;
+	margin-top: 20px;
+}
+.placePage .recommendPlace p i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 3px;
+	background: url('../images/banner-details-page_18.png') center center no-repeat;
+}
+.placePage .recommendPlace p i:last-child{
+	width: 58px;
+	height: 28px;
+	border-radius: 5px;
+	color: #dbdbdb;
+	background: #cbcbcb url('../images/banner-details-page_54.png') center center no-repeat;
+	background-size: 58px 28px;
+	position: relative;
+	top: 4px;
+}
+
+.placePage .recommendPlace p.hotsiteOne_text{
+	font-size: 20px;
+	color: #686868;
+	margin-top: 20px;
+}
+.placePage .recommendPlace h4 span{
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	position: relative;
+	top: 15px;
+	background: url('../images/banner-details-page_58.png') center center no-repeat;
+}
+.placePage .recommendPlace h4{
+	font-size: 24px;
+	color: #686868;
+	margin-bottom: 30px;
+}
+.placePage .recommendPlace h4 i{
+	display: inline-block;
+	font-style: normal;
+	width: 120px;
+	height: 40px;
+	color: #ff9914;
+	line-height: 40px;
+	font-size: 24px;
+	float: right;
+	position: relative;
+	top: 10px;
+}
+
+.placePage .recommendPlace:last-of-type h4{
+	margin-bottom: 160px;
+}
+
+
+
+// 立即预定部分
+.testRerve{
+	width: 100%;
+}
+.placePage .reserve{
+	height: 100px;
+	width: 100%;
+	background-color: #fff;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	border-top: 1px solid #ddd;
+}
+.placePage .reserve .reserveLogo{
+	float: left;
+
+}
+.placePage .reserve .reserveLogo span{
+	display: inline-block;
+	// margin-top: 10px;
+	margin: 10px 20px;
+}
+.placePage .reserve .reserveLogo span:nth-child(1){
+	width: 56px;
+	height: 76px;
+	background: url('../images/place-details-page2_13.png') center center no-repeat;
+}
+.placePage .reserve .reserveLogo span:nth-child(2){
+	width: 82px;
+	height: 76px;
+	background: url('../images/place-details-page2_16.png') center center no-repeat;
+}
+.placePage .reserve .reserveLogo span:nth-child(3){
+	width: 44px;
+	height: 76px;
+	background: url('../images/place-details-page2_18.png') center center no-repeat;
+}
+.placePage .reserve .reserveNow{
+	float: right;
+}
+.placePage .reserve .reserveNow a{
+	display: block;	
+	height: 100px;
+	width: 200px;
+	line-height: 100px;
+	text-align: center;
+	background-color: #ff9914;
+	color: #fff;
+	font-size: 30px;
+	text-decoration: none;
+}
+
+
+
+
+
+

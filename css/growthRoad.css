@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+body{
+    font-family: '微软雅黑';
+    background-color: #efefef;
+}
+.growthRoad{
+    width: 1000px;
+    margin: 0 auto;
+}
+.growthRoad .map{
+    width: 100%;
+    height: 30px;
+    padding-left: 25px;
+    line-height: 30px;
+    background: url('../images/map.png') no-repeat 3px 5px;
+}
+.growthRoad .map>a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #484848;
+}
+.growthRoad .map>p{
+    display: inline-block;
+    color: #484848;
+}
+
+.growContent{
+    width: 100%;
+}
+.growContent .growInfo{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.growInfo::before{
+    content: '';
+    width: 0;
+    height: 100%;
+    border-left: 4px solid #c96;
+    position: absolute;
+    left: 70px;
+    top: 60px;
+    z-index: -1;
+}
+.growContent .growInfo li{
+    width: 100%;
+    height: 130px;
+    margin-top: 25px;
+    position: relative;
+}
+.growContent .growInfo li::before{
+    content: '';
+    height: 20px;
+    width: 35px;
+    border-bottom: 20px solid #fff;
+    border-bottom-right-radius: 40px;
+    position: absolute;
+    left: 120px;
+    top: 38px;
+}
+.growContent .growInfo li::after{
+    content: '';
+    height: 12px;
+    width: 12px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background-color: #ddd;
+    position: absolute;
+    left: 160px;
+    top: 24px;
+}
+.growContent .growInfo li:hover .growText{
+    background-color: #f3f3f3;
+}
+.growContent .growInfo li:hover::before{
+    border-color: #ddd;
+}
+.growContent .growInfo li:hover::after{
+    background-color: #aaa;
+}
+.growContent .growInfo li .growHead{
+    float: left;
+    width: 100px;
+    height: 130px;
+    /*padding: 10px 0 0 20px;*/
+}
+.growContent .growInfo li .growHead img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 15px 0 0 20px;
+}
+.growContent .growInfo li .growText{
+    float: right;
+    width: 780px;
+    height: 100px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 20px 10px 15px;
+    position: relative;
+    color: #686868;
+}
+.growContent .growInfo li .growText>p{
+    line-height: 30px;
+}
+.growContent .growInfo li .growText>span{
+    position: absolute;
+    width: 120px;
+    background: #ff7700;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 6px;
+    right: 10px;
+    bottom: 10px;
+    color: #fff;
+}
+.growContent>p{
+    margin-top: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: #888;
+}
+
+.growContent{
+    animation: growAnimate 1s ease-out;
+}
+
+@keyframes growAnimate{
+    0%{
+        transform: scale(0.8);
+    }
+    40%{
+        transform: scale(1.1);
+    }
+    70%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

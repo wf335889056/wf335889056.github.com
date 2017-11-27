@@ -1,0 +1,183 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+body{
+	background-color: #f2f2f2;
+	height: 888px;
+}
+.pageContainer{
+	width: 690px;
+	margin: 0 auto;
+}
+.payPage .headTitle{
+	width: 100%;
+	height: 80px;
+	background-color: #fff;
+	text-align: center;
+	border-bottom: 1px solid #aaa;
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1111;
+}
+.payPage .headTitle h2{
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 20px;
+	font-size: 34px;
+	color: #333;
+	text-decoration: none;
+	position: relative;
+	left: -25px;
+}
+.payPage .headTitle a{
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 40px;
+	margin: 15px 0 0 20px;
+	background: url('../images/quyudingweitubiao_03.png') center center no-repeat;
+	background-size: 25px 40px;
+}
+.payPage .order{
+	width: 100%;
+	margin-top: 80px;
+	padding-top: 30px;
+	background-color: #fff;
+}
+.payPage .order .orderBg{
+	width: 60px;
+	height: 60px;
+	float: left;
+	background: url('../images/order-pay-page_06.png');
+}
+
+.payPage .order .orderText{
+	margin-left: 70px;
+	overflow: hidden;
+}
+.payPage .order .orderText p:nth-child(1){
+	font-size: 30px;
+	color: #ff9914;
+}
+.payPage .order .orderText p:nth-child(1) span{
+	font-size: 18px;
+	/* padding-left: 0px; */
+}
+.payPage .order .orderText p:nth-child(2){
+	font-size: 20px;
+	color: #686868;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.payPage .orderNum{
+	margin-top: 30px;
+	padding-top: 30px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.payPage .orderNum h3{
+	font-size: 30px;
+	color: #282828;
+}
+.payPage .orderNum p:first-of-type{
+	margin-top: 20px;
+	font-size: 26px;
+	color: #686868;
+}
+.payPage .orderNum p:first-of-type span{
+	float: right;
+	position: relative;
+	top: -7px;
+}
+.payPage .orderNum p:first-of-type span i{
+	display: inline-block;
+	width: 25px;
+	height: 30px;
+	background: url('../images/order-page_07.png') center center no-repeat;
+	position: relative;
+	top: 6px;
+}
+.payPage .orderNum p:last-of-type{
+	font-size: 26px;
+	color: #686868;
+	margin: 20px 0 30px 0;
+}
+
+.payPage .payMoney{
+	margin-top: 30px;
+	// padding-top: 30px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.payPage .payMoney p{
+	padding: 30px 0;
+	font-size: 30px;
+	color: #ff9914;
+	border-bottom: 1px solid #ddd;
+}
+.payPage .payMoney p span{
+	float: right;
+}
+.payPage .payMoney p:nth-child(2){
+	color: #d7d7d7;
+}
+
+
+
+
+
+// 立即预定部分
+.payPage .testReserve{
+	width: 100%;
+}
+.payPage .reserve{
+	height: 100px;
+	width: 100%;
+	background-color: #fff;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	border-top: 1px solid #ddd;
+}
+.payPage .reserve .reserveLogo{
+	float: left;
+	font-size: 30px;
+	line-height: 100px;
+	padding-left: 30px;
+	color: #ff9914;
+}
+
+.payPage .reserve .reserveNow{
+	float: right;
+	height: 100px;
+	width: 200px;
+	line-height: 100px;
+	text-align: center;
+	background-color: #ff9914;
+	color: #fff;
+	font-size: 30px;
+}
+
+
+
+
+
+
+
+
+

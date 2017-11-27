@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wall{
+    width: 1000px;
+    margin: -10px auto;
+    height: 600px;
+    font-size: 12px;
+    text-align: center;
+}
+.wall .content{
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    background: url(../images/content_bg.jpg) no-repeat;
+    position: relative;
+}
+.wall #content .tip1, .wall #content .tip2, .wall #content .tip3, .wall #content .tip4, .wall #content .tip5, .wall #content .tip6, .wall #content .tip7, .wall #content .tip8 {
+    position: absolute;
+    width: 227px;
+    left: 200px;
+    top: 100px;
+}
+
+.wall #content .tip1 .tip_h {
+    background: url(../images/tip1_h.gif) no-repeat left top;
+}
+
+.wall #content .tip1 .tip_h, .wall #content .tip2 .tip_h, .wall #content .tip3 .tip_h, .wall #content .tip4 .tip_h, .wall #content .tip5 .tip_h, .wall #content .tip6 .tip_h, .wall #content .tip7 .tip_h, .wall #content .tip8 .tip_h {
+    width: 227px;
+    padding-top: 45px;
+    height: 23px;
+    text-align: left;
+    cursor: move;
+}
+.wall #content .tip1 .tip_c {
+    background: url(../images/tip1_c.gif) repeat-y;
+}
+
+.wall #content .tip1 .tip_c, .wall #content .tip2 .tip_c, .wall #content .tip3 .tip_c, .wall #content .tip4 .tip_c, .wall #content .tip5 .tip_c, .wall #content .tip6 .tip_c, .wall #content .tip7 .tip_c, .wall #content .tip8 .tip_c {
+    width: 200px;
+    padding-left: 12px;
+    padding-right: 15px;
+    min-height: 40px;
+    text-align: left;
+    line-height: 20px;
+    max-height: 160px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.wall #content .tip1 .tip_f {
+    background: url(../images/tip1_f.gif) no-repeat left top;
+}
+
+.wall #content .tip1 .tip_f, .wall #content .tip2 .tip_f, .wall #content .tip3 .tip_f, .wall #content .tip4 .tip_f, .wall #content .tip5 .tip_f, .wall #content .tip6 .tip_f, .wall #content .tip7 .tip_f, .wall #content .tip8 .tip_f {
+    width: 227px;
+    height: 53px;
+    padding-top: 20px;
+}
+.wall #content .close, #content .close2 {
+    float: left;
+    font-size: 12px;
+    cursor: pointer;
+    color: #000000;
+}
+.wall .clr {
+    clear: both;
+    overflow: auto;
+    display: block;
+    height: 0px;
+}
+.wall #content .icon {
+    float: left;
+    width: 35px;
+    padding-left: 15px;
+    height: 35px;
+    text-align: center;
+}
+.wall #content .name {
+    float: right;
+    padding-right: 15px;
+    text-align: right;
+    font-size: 14px;
+    line-height: 35px;
+    color: #C0F;
+}
+.wall #content .num {
+    float: left;
+    padding-left: 7px;
+    width: 195px;
+}

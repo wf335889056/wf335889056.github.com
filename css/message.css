@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+.message{
+    width: 1000px;
+    /*height: 1000px;*/
+    overflow: hidden;
+    padding-bottom: 40px;
+    margin: -10px auto;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+}
+.mesBox{
+    width: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 20px 10px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.mesBox .masterText{
+    line-height: 60px;
+    font-size: 18px;
+    /*padding-left: 20px;*/
+}
+.mesBox input{
+    width: 30%;
+    font-size: 16px;
+    color: #888;
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+.mesBox .mesAuthor{
+    width: 60%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.mesBox .mesAuthor li{
+    float: left;
+    opacity: 0.5;
+}
+
+.mesBox .mesAuthor li img{
+    width: 22px;
+    height: 22px;
+    margin-left: 10px;
+}
+.mesBox .mesAuthor li:hover{
+    opacity: 1;
+}
+.mesBox .mesAuthor li.active{
+    opacity: 1;
+}
+
+
+
+.mesBox .youMes{
+    /*width: 80%;*/
+    width: 90%;
+    /*margin: 0 auto;*/
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+}
+.mesBox .submit{
+    float: right;
+    margin-top: 10px;
+    /*position: absolute;*/
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    margin-right: 20px;
+    background-color: skyblue;
+    border: none;
+}
+.mesBox .mesHead{
+    width: 95%;
+    background-color: #e3eaec;
+    line-height: 30px;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-top: 10px;
+}
+.mesBox .mesHead>span{
+    display: block;
+    width: 80px;
+    text-align: center;
+    /*padding-left: 20px;*/
+    background-color: #fff;
+}
+.mesBox .allMes{
+    width: 100%;
+}
+.mesBox .allMes li{
+    height: 65px;
+    /*background-color: pink;*/
+    padding-top: 15px;
+    padding-left: 10px;
+    overflow: hidden;
+    border-bottom: 1px dashed #aaa;
+}
+.mesBox .allMes li:hover{
+    background-color: #CEEBEC;
+}
+.mesBox .allMes li>img{
+    float: left;
+    width: 50px;
+    height: 50px;
+
+}
+.mesBox .allMes .allMesText{
+    float: left;
+    margin-left: 10px;
+    width: 400px;
+}
+.mesBox .allMes .allMesText p:nth-child(1){
+    color: #444;
+}
+.mesBox .allMes .allMesText p:nth-child(1)>span{
+    color: #2b4a78;
+}
+.mesBox .allMes .allMesText p:nth-child(2){
+    color: #889db6;
+    margin-top: 3px;
+    font-size: 14px;
+}
+.mesBox .allMes .allMesText p:nth-child(2)>span{
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+.mesBox .allMes li:hover .allMesText p:nth-child(2)>span{
+    display: block;
+}

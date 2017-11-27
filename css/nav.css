@@ -1,0 +1,126 @@
+ul li{
+			list-style: none;
+		}
+		.nav{
+			width: 100%;
+			height: 50px;
+			margin-top: 5px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			background-color: #6cc;
+			box-shadow: 1px 1px 3px #aaa;
+		}
+		.nav ul li{
+			list-style: none;
+			float: left;
+			line-height: 50px;
+			width: 140px;
+			/*background: red;*/
+			margin-right: 3px;
+		}
+		.nav ul li:first-child{
+			margin-right: 4px;
+		}
+		.nav ul li:last-child{
+			margin-left: 1px;
+			margin-right: 0;
+		}
+		.nav ul li a{
+			display: block;
+			width: 140px;
+			line-height: 50px;
+			border-radius: 5px;
+			text-align: center;
+			color: #fff;
+			text-decoration: none;
+		}
+		.nav ul li a:hover{
+			background-color: #f15694;
+		}
+
+		/*轮播图*/
+		.slideshow{
+			float: left;
+			/*background-color: pink;*/
+			width: 600px;
+		}
+		.slideshow .showImg{
+			float: left;
+			width: 480px;
+			height: 300px;
+			position: relative;
+			z-index: 111;
+		}
+		.slideshow .showImg img{
+			width: 480px;
+			height: 300px;
+			position: absolute;
+			left: 0;
+			top: 0;
+
+		}
+		.slideshow .banNav{
+			float: left;
+			margin-left: 10px;
+			position: relative;
+			/*margin-top: 5px;*/
+		}
+		.slideshow .banNav li:first-child{
+			margin-top: 4px;
+		}
+		.slideshow .banNav li{
+			/*margin: 5px;*/
+			width: 100px;
+			height: 50px;
+			margin-bottom: 10px;
+		}
+		.slideshow .banNav li a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.slideshow .banNav li img{
+			width: 100px;
+			height: 50px;
+		}
+		.slideshow .banNav .banMask{
+			width: 100px;
+			height: 50px;
+			position: absolute;
+			left: -5px;
+			top: 1px;
+			border: 4px solid #fff;
+			border-width: 4px 6px;
+			box-shadow: 0 0 1px #000 inset;
+			border-radius: 2px;
+		}
+		.slideshow .banNav .banMask::before{
+			content: '';
+			position: absolute;
+			border: 10px solid #efefef;
+			border-width: 5px 10px;
+			border-right-color: #fff;
+			/*border-left: none;*/
+			left: -25px;
+			top: 40%;
+		}
+		/*小黑板*/
+		.blackBoard{
+			width: 380px;
+			height: 272px;
+			/*background-color: pink;*/
+			background: url('../images/blackBoard.jpg') no-repeat center center;
+			float: right;
+			margin-top: 20px;
+			position: relative;
+		}
+		.oneMotto{
+			width: 230px;
+			overflow: hidden;
+			position: absolute;
+			right: 20px;
+			top: 100px;
+			color: pink;
+			font: 16px/24px '宋体';
+			/*background-color: pink;*/
+		}

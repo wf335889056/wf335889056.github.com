@@ -1,0 +1,655 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul li{
+		list-style: none;
+	}
+	.bigBox{
+		width: 1240px;
+		margin: 0 auto;
+	}
+		/*头部导航栏*/
+		.header{
+			width:1240px;
+			height: 58px; 
+			background-color: #191D3A;
+			margin: 0 auto;
+		}
+		.header .top{
+			width: 960px;
+			margin: 0 auto;
+		}
+		.header .top .logo{
+			height: 58px;
+			width: 174px;
+			background: url(images/logo.png) no-repeat;
+			float: left;
+		}
+		.header .top .nav{
+			width: 504px;
+			height: 58px;
+			float: left;
+		}
+		.header .top .nav .wrap{
+			list-style: none;
+			width: 504px;
+			height: 58px;
+		}
+		.header .top .nav .wrap li a{
+			float: left;
+			text-decoration: none;
+			color: #818496;
+			display: block;
+			width: 83px;
+			height: 58px;
+			line-height: 58px;
+			background-color: #191D3A;
+			text-align: center;
+			border-right: 1px solid #252947;
+		}
+		.header .top .nav .wrap li a:hover{
+			color: #e5e5e5;
+			background-color: #252947;
+		}
+		.header .top .btn{
+			width: 182px;
+			height: 46px;
+			float: right;
+			padding-top: 12px;
+		}
+		.header .top .btn .but{
+			width: 100px;
+			height: 34px;			
+			background-color: #38b774;
+			cursor: pointer;
+			border: 0;
+			border-radius: 5px;
+			color: #e5e5e5;
+		}
+		/*图片部分*/
+		.img{
+			width: 1240px;
+			height: 465px;
+			background-color: pink;
+			overflow: hidden;    
+		/*	//隐藏右侧图片*/
+			position: relative;
+		}
+		.img ul{
+			height: 465px;
+			width: 7440px;
+			/*加定位*/
+			position: absolute;
+			left: 0;
+			top: 0;			
+		}
+		.img ul li{
+			width: 1240px;
+			height: 465px;
+			float: left;
+			/*overflow: hidden;*/
+		}
+		/*小圆点*/
+		.img ol{
+			width: 150px;
+			position: absolute;
+			left: 570px;
+			bottom: 20px;
+			list-style: none;
+		}
+		.img ol li{
+			width: 12px;
+			height: 12px;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			float: left;
+			margin-right: 15px;
+			cursor: pointer;
+			line-height: 12px;
+			text-align: center;
+		}
+		.current{
+			background-color: #fff;
+		}
+		/*视屏部分*/
+		.vio{
+			width: 1000px;
+			height: 230px;
+			margin: 50px auto 0;
+			border-bottom: 1px solid #b5c0cb;
+			position: relative;
+		}
+		.vio .bpt{
+			width: 218px;
+			height: 230px;	
+			text-align: center;	
+			float: left;	
+		}
+		.vio .video{
+			width: 218px;
+			height: 230px;	
+			text-align: center;
+			float: left;
+			margin-left: 43px;
+		}
+		.vio .pic3{
+			width: 218px;
+			height: 230px;	
+			text-align: center;
+			float: left;
+			margin-left: 42px;
+		}
+		.vio .pic1{
+			width: 218px;
+			height: 230px;	
+			text-align: center;
+			float: left;
+			margin-left: 43px;
+		}
+		.vio .sp{
+			display: block;
+			font-weight: bold;
+			font-size: 12px;
+			margin-top: 15px;
+			margin-bottom: 12px;
+		}
+		.vio a{
+			color: #38b774;
+			text-decoration: none;
+			display: inline-block;
+		}
+		.iconfont{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			padding-left: 10px;
+		}
+		.vio ul{
+			width: 104px;
+			height: 12px;
+			background-color: #fff;
+			position: absolute;
+			bottom: -6px;
+			left: 50%;
+			margin-left: -69px;
+			padding: 0 17px;
+		}
+		.vio ul li{
+			float: left;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			margin: 0px 7px;
+			background-color: #b5c0cb;			
+		}
+		.vio ul li.current2{
+			background-color: #38b774;
+		}
+		.vio .bpt img:hover{
+			transform: translate(-3px,-10px);
+			box-shadow: 5px 10px 20px #666;
+			cursor: pointer;
+		}
+		.vio .video img:hover{
+			transform: translate(-3px,-10px);
+			box-shadow: 5px 10px 20px #666;
+			cursor: pointer;
+		}
+		.vio .pic3 img:hover{
+			transform: translate(-3px,-10px);
+			box-shadow: 5px 10px 20px #666;
+			cursor: pointer;
+		}
+		.vio .pic1 img:hover{
+			transform: translate(-3px,-10px);
+			box-shadow: 5px 10px 20px #666;
+			cursor: pointer;
+		}
+		/*新闻部分*/
+		.news{
+			width: 1000px;
+			height: 320px;
+			margin: 53px auto 0px;
+			overflow: hidden;
+		}
+		.news .l_side{
+			width: 500px;
+			height: 380px;
+			background: url(images/bynewsbg.jpg) no-repeat 0px 0px;
+			padding-top: 120px;
+			float: left;
+		}
+		.news .l_side p{
+			width: 460px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 12px;
+			border-bottom: 1px solid #b5c0cb;
+			margin-left: 20px;
+		}
+		.news .l_side p span{
+			color: #b5c0cb;
+		}
+		.news .l_side p a{
+			color: #444866;
+			margin-left: 20px;
+		}
+		.news .r_side{
+			width: 500px;
+			height: 380px;
+			background: url(images/byhrbg3.jpg) no-repeat 0px 0px;
+			/*padding-top: 120px;*/
+			float: right;
+			color: #fff;
+			position: relative;
+		}
+		.news .r_side .h{
+			width: 116px;
+			/*height: 35px;*/
+			position: absolute;
+			top: 44px;
+			left: 80px;
+		}
+		.news .r_side .h h1{
+			font-size: 28px;
+			line-height: 28px;
+		}
+		.news .r_side .more{
+			width: 54px;
+			height: 26px;
+			border: 1px solid #fff;
+			border-radius: 3px;
+			position: absolute;
+			top: 40px;
+			right: 217px;
+			text-align: center;
+			line-height: 26px;
+		}
+		.news .r_side .more span{
+			position: absolute;
+			display: inline-block;
+			height: 12px;
+			top: -5px;
+		}
+		.news .r_side .mes{
+			width: 300px;
+			margin-top: 110px;
+			padding-left: 20px;
+		}
+		.news .r_side .mes h2{
+			font-size: 14px;
+			color: #fff;
+			margin-left: 
+		}
+		.news .r_side .mes p{
+			
+			line-height: 40px;
+			font-size: 14px;
+			border-bottom: 1px solid #b5c0cb;
+		}
+		.news .r_side .mes a{
+			color: #fff;
+		}
+		/*版权部分*/
+		.bto{
+			width: 1240px;
+			height: 90px;
+			background-color: #191D3A;
+			margin-top: 53px;
+		}
+		.bto .center{
+			width: 1000px;
+			height: 90px;
+			line-height: 90px;
+			margin: 0 auto;
+		}
+		.bto .bto1{
+			width: 200px;
+			height: 90px;
+			line-height: 90px;
+			float: left;
+		}
+		.bto .bto1 p{
+			float: left;
+			color: #f1f1f1;
+		}
+		.bto .bto1 p a{
+			color: #f1f1f1;
+			display: inline-block;
+			height: 90px;
+			height: 90px;
+		}
+		.bto .bto2{
+			position: relative;
+		}
+		.bto .bto2 .bto3{
+			width: 900px;
+			color: #e5e5e5;
+			/*float: right;*/
+		}
+		.bto .bto2 .img{
+			width: 100px;
+			height: 50px;
+			float: right;
+			position: absolute;
+			right: 0px;
+			bottom: 23px;
+		}
+
+		/*下拉列表*/
+		.header .nav .wrap>li{
+			width: 84px;
+			height: 58px;
+			float: left;
+		}
+		.header .nav li ul{
+			position: absolute;
+			top: 58px;
+			z-index: 2;
+			display: none;
+		}
+		.header .nav li ul li{
+			/*height: 30px;*/
+			background-color: red;
+		}
+
+		/*登录框*/
+		.reg{
+			width: 500px;
+			height: 300px;
+			border: 1px solid #000;
+			background-color: #e5e5e5;
+			position: fixed;
+			left: 50%;
+			bottom: 110px;
+			margin-left: -250px;		
+			text-align: center;
+			z-index: 10001;
+			font-size: 33px;
+			display: none;
+		}
+		.reg input{
+			width: 300px;
+			height: 40px;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="font/demo.css">
+	<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+</head>
+<body>
+<div class="bigBox">
+	<!-- 导航栏部分 -->
+	<div class="header">
+		<div class="top">
+			<div class="logo"></div>
+			<div class="nav">
+				<ul class="wrap">
+					<li>
+					<a href="#">首页</a>
+					<!-- 下拉列表 -->
+					<ul>
+                		<li><a href="javascript:void(0);">VIP区</a></li>
+               			<li><a href="javascript:void(0);">贵族区</a></li>
+           		 	</ul>
+					</li>
+					<li><a href="#">博雅游戏</a>
+					<ul>
+               			<li><a href="javascript:void(0);">斗地主</a></li>
+                		<li><a href="javascript:void(0);">打麻将</a></li>
+                		<li><a href="javascript:void(0);">石头剪刀布</a></li>
+           		 	</ul>
+					</li>
+					<li><a href="#">博雅新闻</a>
+					<ul>
+                		<li><a href="javascript:void(0);">老师中了1亿</a></li>
+                		<li><a href="javascript:void(0);">速打50元</a></li>
+                		<li><a href="javascript:void(0);">快递费</a></li>
+           		 	</ul>
+					</li>
+					<li><a href="#">关于我们</a>
+					<ul>
+                		<li><a href="javascript:void(0);">很棒</a></li>
+                		<li><a href="javascript:void(0);">很好</a></li>
+                		<li><a href="javascript:void(0);">很厉害</a></li>
+           		 </ul>
+					</li>
+					<li><a href="#">客服中心</a>
+					<ul>
+                		<li><a href="javascript:void(0);">给五星</a></li>
+                		<li><a href="javascript:void(0);">给好评</a></li>
+                		<li><a href="javascript:void(0);">禁止吐槽</a></li>
+           		 </ul>
+					</li>
+					<li><a href="#">投资者关系</a>
+				<ul>
+                		<li><a href="javascript:void(0);">把你的钱给我</a></li>
+                		<li><a href="javascript:void(0);">都给我</a></li>
+                		<li><a href="javascript:void(0);">对没错</a></li>
+           		 </ul>
+					</li>
+				</ul>
+			</div>
+			<div class="btn"><input type="button" value="加入我们" class="but"></div>
+		</div>		
+	</div>
+	<!-- 图片部分 -->
+	<div class="img">
+		<ul class="ul1">
+			<li><img src="images/banner1.jpg" style="width: 1240px; height: 465px;"></li>
+			<li><img src="images/banner2.jpg" style="width: 1240px; height: 465px;"></li>
+			<li><img src="images/banner3.jpg" style="width: 1240px; height: 465px;"></li>
+			<li><img src="images/banner4.jpg" style="width: 1240px; height: 465px;"></li>
+			<li><img src="images/banner5.jpg" style="width: 1240px; height: 465px;"></li>
+			<!-- <li><img src="images/banner.jpg" style="width: 1240px; height: 465px;"></li> -->
+		</ul>
+		<!-- <ul class="ul2">
+			<li class="current"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul> -->
+		<ol></ol>
+	</div>
+	<!-- 视频部分 -->
+	<div class="vio">
+		<div class="bpt">
+			<img src="images/bpt.jpg" width="218px" height="130px" class="img1">
+			<span class="sp">PPT宣传片</span>
+			<a href="#">点击播放<span class="iconfont icon-play"></span></a>
+		</div>
+		<div class="video">
+			<img src="images/video.jpg" width="218px" height="130px">
+			<span class="sp">PPT宣传片</span>
+			<a href="#">点击播放<span class="iconfont icon-play"></span></a>
+		</div>
+		<div class="pic3">
+			<img src="images/gamepic3.jpg" width="218px" height="130px">
+			<span class="sp">PPT宣传片</span>
+			<a href="#">LANDLORDS<span class="iconfont icon-play"></span></a>
+		</div>
+		<div class="pic1">
+			<img src="images/gamepic1.jpg" width="218px" height="130px">
+			<span class="sp">PPT宣传片</span>
+			<a href="#">TEXAS HOLD'EM POKER<span class="iconfont icon-play"></span></a>
+		</div>
+		<ul>
+			<li class="current2"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- 新闻部分 -->
+	<div class="news">
+		<div class="l_side">
+			<p><span>09 / 28</span><a href="#">2015博雅国际扑克大赛(BPT)在澳门落幕</a></p>
+			<p><span>08 / 26</span><a href="#">2015 BPT博雅国际扑克大赛重磅来袭</a></p>
+			<p><span>08 / 01</span><a href="#">博雅互动与阿里游戏联手启动"淘宝杯首届棋牌大赛"</a></p>
+			<p><span>07 / 21</span><a href="#">湖南省省长杜家毫一行参观博雅互动</a></p>
+		</div>
+		<div class="r_side">
+			<div class="h">
+				<h1>专场招聘</h1>
+				<p>&nbsp;BOYAA JOBS</p>
+			</div>
+			<div class="more">
+				MORE<span>+</span>
+			</div>
+			<div class="mes">
+				<h2>专场招聘岗位：</h2>
+				<p><a href="#">PHP开发工程师</a></p>
+				<p><a href="#">C++开发工程师</a></p>
+				<p><a href="#">WEB前端开发工程师</a></p>
+				<p><a href="#">大数据开发工程师</a></p>
+			</div>
+		</div>
+	</div>
+	<!-- 版权部分 -->
+	<div class="bto">
+	<div class="center">
+		<div class="bto1">
+			<p><a href="http://www.baidu.com">网站地图</a> | <a href="#">免费声明</a></p>
+		</div>
+		<div class="bto2">
+			<div class="bto3">
+				Copyright © 2004-2014 博雅互动(Boyaa Interactive) 粤ICP备05062536号 增值电信业务经营许可证：粤B2-20110513
+			</div>
+			<div class="img">
+				<img src="images/govIcon.gif" width="100px" height="60px">
+			</div>
+		</div>
+	</div>		
+	</div>
+	<!-- 登录框 -->
+	<div class="reg">
+		<h1>输入银行卡号和密码</h1>
+		<h2>你只会得到1亿</h2>
+		<input type="text" placeholder="银行卡号"><br>
+		<input type="text" placeholder="密码"><br>
+		<input type="button" class="an" value="拿钱走人" />
+	</div>
+	<div id="mask" style="zoom: 1; opacity: 0.3; overflow: hidden; width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 10000; background: 0px 0px rgb(0, 0, 0); display: none;"></div>
+</div>
+</body>
+</html>
+<!-- 登录框 -->
+<script type="text/javascript">
+	var btn = document.querySelector('.but');
+	var reg = document.querySelector('.reg');
+	var mask = document.querySelector('#mask');
+	var an = reg.querySelector('.an');
+	btn.onclick = function(){
+		mask.style.display = "block";
+		reg.style.display = "block";
+	}
+	an.onclick = function(){
+		mask.style.display = "none";
+		reg.style.display = "none";
+	}
+	mask.onclick = function(){
+		mask.style.display = "none";
+		reg.style.display = "none";
+	}
+
+</script>
+
+
+<script src="jquery-1.11.1.min.js"></script>
+<!-- 下拉列表部分 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var jqli = $(".wrap>li");
+		jqli.mouseenter(function(){
+			$(this).children("ul").stop().slideDown(1000);
+		});
+		jqli.mouseleave(function(){
+			$(this).children("ul").stop().slideUp(1000);
+		})
+
+	});
+
+
+</script>
+<script type="text/javascript">
+	var box = document.querySelector('.img');
+	var ul = document.querySelector('.ul1');
+	var imgArr = ul.getElementsByTagName('li');
+	var ol = document.querySelector('ol');
+
+	//复制第一张图片
+	var newLi = imgArr[0].cloneNode(true);
+	ul.appendChild(newLi);
+
+	//生成ol中的li
+	for(var i=0;i<imgArr.length-1;i++){
+		var newOlLi = document.createElement("li");
+		newOlLi.innerHTML = " ";
+		ol.appendChild(newOlLi);
+	}
+	//显示第一个ol中li的背景
+	var olLiArr = ol.children;
+	ol.children[0].className="current";
+	//鼠标放在序列上轮播图片
+	for(var i=0;i<olLiArr.length;i++){
+		olLiArr[i].index = i;
+		olLiArr[i].onmouseover = function(){
+			//先清除序列背景
+			for(var j=0;j<olLiArr.length;j++){
+				olLiArr[j].className = "";
+			}
+			//添加序列背景
+			olLiArr[this.index].className = "current";
+			animate(ul,-this.index*ul.children[0].offsetWidth);
+			key = square = this.index;
+		}
+	}
+	//添加定时器
+	var timer = null;
+	var key = 0;
+	var square = 0;
+	timer = setInterval(autoPlay,3000);
+	function autoPlay(){
+		key++;
+		square++;
+		if(key>olLiArr.length){
+			key = 1;
+			ul.style.left = 0;
+		}
+		animate(ul,-key*ul.children[0].offsetWidth);
+		// animate(ul,-key.index*1240);
+		square = square>olLiArr.length-1?0:square;
+		for(var j=0;j<olLiArr.length;j++){
+			olLiArr[j].className = "";
+		}
+		olLiArr[square].className = "current";
+	}
+	box.onmouseover = function(){
+		clearInterval(timer);
+	}
+	box.onmouseout = function(){
+		timer = setInterval(autoPlay,3000);
+	}
+	//封装一个移动的函数
+	function animate(obj,target){
+		clearInterval(obj.timer);
+		var speed = obj.offsetLeft < target ? 15 : -15;
+		obj.timer = setInterval(function(){
+			var result = target - obj.offsetLeft;
+			obj.style.left = obj.offsetLeft + speed + "px";
+			if(Math.abs(result) <= 15){
+				obj.style.left = target + "px";
+				clearInterval(obj.timer);
+			}
+		},30);
+	}
+</script>

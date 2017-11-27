@@ -1,0 +1,158 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+.clearfix::before,
+.clearfix::after{
+	content:'';
+	display: block;
+	line-height: 0;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+// html,body{
+// 	width: 100%;
+// }
+.pageContainer{
+	width: 690px;
+	margin: 0 auto;
+}
+.morePage{
+	// height: 3000px;
+	background-color: #ddd;
+}
+.morePage .headTitle{
+	width: 750px;
+	height: 80px;
+	background-color: #fff;
+	text-align: center;
+	border-bottom: 1px solid #aaa;
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1111;
+}
+.morePage .headTitle h2{
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 20px;
+	font-size: 34px;
+	color: #333;
+	text-decoration: none;
+	margin-left: -25px;
+}
+.morePage .headTitle a > span{
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 40px;
+	margin: 15px 0 0 20px;
+	background: url('../images/quyudingweitubiao_03.png') center center no-repeat;
+	background-size: 25px 40px;
+}
+
+
+.clearHeight{
+	height: 50px;
+}
+.morePage .moreContent{
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	margin-top: 30px;
+	padding-top: 30px;
+	position: relative;
+	background-color: #fff;
+	/* margin-bottom: 30px; */
+}
+.morePage .moreContent .left{
+	width: 44px;
+	height: 44px;
+	background: url('../images/__icon_u76.png') center center no-repeat;
+	background-position: 0 0px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+.morePage .moreContent .right{
+	// width: 100%;
+	flex:1;
+	margin-left: 65px;
+	// float: right;
+}
+.morePage .moreContent .right .rightTop{
+    margin-top: 5px;
+	
+}
+.morePage .moreContent .right .rightTop h3{
+	float: left;
+	font-size: 30px;
+	color: #282828;
+}
+.morePage .moreContent .right .rightTop span{
+	float: right;
+	font-size: 20px;
+	color: #ff9914;
+	position: relative;
+	top: 2px;
+}
+.morePage .moreContent .right .rightTop span i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('../images/order-page_13.png') center center no-repeat;
+	transform: rotate(90deg);
+	position: relative;
+	top: 2px;
+}
+.morePage .moreContent .right ul{
+    margin-top: 30px;
+	
+}
+.morePage .moreContent .right ul li{
+	float: left;
+	height: 50px;
+	width: 120px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 10px;
+	color: #959595;
+	font-size: 26px;
+	border: 1px solid #dedede;
+	margin-right: 45px;
+	margin-bottom: 20px;
+}
+.morePage .moreContent .right ul li:nth-child(4){
+	margin-right: 0;
+}
+.morePage .moreContent .right ul li:last-child{
+	margin-bottom: 30px;
+}
+
+.morePage .moreContent:nth-child(4) .left{
+	background-image: url('../images/the-first-page1_25.png');
+}
+.morePage .moreContent:nth-child(5) .left{
+	background-image: url('../images/the-first-page1_22.png');
+}
+.morePage .moreContent:nth-child(6) .left{
+	background-image: url('../images/the-first-page1_27.png');
+}
+.morePage .moreContent:nth-child(7) .left{
+	background-image: url('../images/the-first-page1_29.png');
+}
+
+

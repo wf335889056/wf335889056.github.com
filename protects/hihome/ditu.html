@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/ditu.css">
+
+</head>
+<body>
+<div class="dituPage">
+	<div class="daohang">
+		<div class="ditu">
+			<img src="images/背景.png" class="beijing" alt="">
+		</div>
+	<!-- 返回 -->
+	<a href="javascript:history.go(-1)"></a>
+	<a href=""></a>
+	<a href=""></a>
+	</div>
+	<div class="allplaceContent">
+	<div class="pageContainer">
+		<img src="images/hongpaContent1.png" alt="">
+		<div class="allplaceText">
+			<h2>LOFT主题别墅轰趴馆</h2>
+			<p><i></i><i></i><i></i><i></i><i></i><i></i></p>
+			<del></del>
+			<span>￥2144/天</span>
+			<p>兰苑社区<br>京水花园A栋...</p>
+		</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>
+<script src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+			$('.ditu').scrollLeft(100);
+			$('.ditu').scrollTop(250);
+		$('.dituPage .daohang a:nth-of-type(2)').click(function(){
+			console.log($('.ditu'));
+			$('.ditu').scrollLeft(300);
+			$('.ditu').scrollTop(200);
+		})
+		$('.dituPage .allplaceContent .allplaceText del').click(function(){
+			console.log($('.ditu'));
+			$('.ditu').scrollLeft(250);
+			$('.ditu').scrollTop(150);
+		})
+	})
+
+
+
+</script>
+
+
+

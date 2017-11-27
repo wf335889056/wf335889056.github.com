@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			/*width: 1175px;*/
+			margin: 0 auto;
+			/*overflow: hidden;*/
+			position: relative;
+		}
+		.box{
+			/*width: 150px;*/
+			padding: 5px;
+			float: left;
+			background-color: skyblue;		
+			/*overflow: hidden;	*/
+		}
+		.box .box_img{
+			border: 1px solid palegoldenrod;
+			padding: 5px;
+			border-radius: 5px;
+		}
+		div img{
+			width: 150px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+<div class="box">
+	<div class="box_img"><img src="images/1.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/2.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/3.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/4.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/5.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/6.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/7.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/8.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/9.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/10.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/11.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/12.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/13.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/14.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/15.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/16.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/17.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/18.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/19.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/20.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/21.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/22.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/23.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/24.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/25.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/26.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/27.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/28.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/29.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/30.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/31.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/32.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/33.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/34.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/35.jpg" alt=""></div>
+</div>
+<div class="box">
+	<div class="box_img"><img src="images/36.jpg" alt=""></div>
+</div>
+</div>
+</body>
+</html>
+<script type="text/template">
+	
+</script>
+<script type="text/javascript">
+window.onload = function(){
+	var container = document.getElementsByClassName('container')[0];
+	
+	function addImg(container){
+		var divs = [];
+		for(var i = 0; i < 25; i++){
+			var div = document.createElement('div');
+			div.className = 'box';
+			var str = '';
+			str+='<div class="box_img"><img src="images/'+(i+1)+'.jpg" alt=""></div>';
+			div.innerHTML = str;
+			container.appendChild(div);
+		}
+	}
+	
+	var box = document.getElementsByClassName('box');
+	var minHeight;
+	var minIndex;
+	var boxHeightArr = []; 
+
+	addImg(container);
+	imgLocation(box,container);
+
+	
+	// console.log(container.style.width);
+
+	function imgLocation(box,container){
+		//盒子的宽度
+		var boxWidth = box[0].offsetWidth;
+		
+		//屏幕的宽度
+		var screenWidth = document.documentElement.clientWidth;
+
+		var clos = Math.floor(screenWidth/(boxWidth+1));
+
+		//给container设置宽度，使整体居中
+		container.style.width = boxWidth*clos + 'px';
+
+		
+		for(var i = 0; i < box.length; i++){
+			if(i < clos){
+				//第一行
+				//获取第一行最小高度
+				boxHeightArr[i] = box[i].offsetHeight;
+				// console.log(boxHeightArr);
+			}else{
+				minHeight = Math.min.apply(null,boxHeightArr);
+				minIndex = getBoxLeft(boxHeightArr,minHeight);
+				// console.log(box[minIndex].offsetLeft);
+
+				box[i].style.position = 'absolute';
+				box[i].style.top = minHeight + 'px';
+				box[i].style.left = minIndex * boxWidth + 'px';
+				boxHeightArr[minIndex] += box[i].offsetHeight;
+				// console.log(boxHeightArr[minIndex]);
+			}
+		}
+		console.log(boxHeightArr[minIndex]);
+	}
+	window.onscroll = function(){
+		var scrollHeight = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+		var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+		if(boxHeightArr[minIndex] <= (scrollHeight+screenHeight+100)){
+			addImg(container);	
+			imgLocation(box,container);
+		}
+	}
+	// console.log(minHeight);
+	
+	function getBoxLeft(arr,minHeight){
+		for(var i = 0; i < arr.length; i++){
+			if(arr[i] == minHeight){
+				return i;
+			}
+		}
+	}	
+		// imgLocation(divs,container);
+	
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

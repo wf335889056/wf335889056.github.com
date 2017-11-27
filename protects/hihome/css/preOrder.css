@@ -1,0 +1,244 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+.clearfix::before,
+.clearfix::after{
+	content:'';
+	display: block;
+	line-height: 0;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+// html,body{
+// 	width: 100%;
+// }
+.pageContainer{
+	width: 710px;
+	margin: 0 auto;
+}
+
+body{
+	background-color: #ddd;
+}
+.orderPage{
+	width: 100%;
+	// height: 3000px;
+	background-color: #ddd;
+	overflow: hidden;
+	padding-bottom: 160px;
+}
+.orderPage .headTitle{
+	width: 750px;
+	height: 80px;
+	background-color: #fff;
+	text-align: center;
+	border-bottom: 1px solid #aaa;
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1111;
+}
+.orderPage .headTitle h2{
+	display: inline-block;
+	width: 270px;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 20px;
+	font-size: 34px;
+	color: #333;
+	text-decoration: none;
+	margin-left: -40px;
+}
+.orderPage .headTitle a > span{
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 40px;
+	margin: 15px 0 0 20px;
+	background: url('../images/quyudingweitubiao_03.png') center center no-repeat;
+	background-size: 25px 40px;
+}
+
+
+.clearHeight{
+	height: 50px;
+}
+// .orderPage .orderContent{
+// 	width: 100%;
+// 	overflow: hidden;
+// 	display: flex;
+// 	margin-top: 80px;
+// 	padding-top: 30px;
+// 	position: relative;
+// 	background-color: #fff;
+// 	padding-bottom: 30px;
+
+// }
+// .orderPage .orderContent .left{
+// 	width: 47px;
+// 	height: 47px;
+// 	background: url('../images/submit-order-page_10.png') center center no-repeat;
+// 	background-position: 0 0px;
+// 	position: absolute;
+// 	top: 35px;
+// 	left: 30px;
+// }
+// .orderPage .orderContent .right{
+// 	flex:1;
+// 	margin-left: 65px;
+// }
+// .orderPage .orderContent .right .rightTop{
+//     margin-top: 5px;	
+// }
+// .orderPage .orderContent .right .rightTop h3{
+// 	float: left;
+// 	font-size: 28px;
+// 	color: #ff9914;
+// }
+// .orderPage .orderContent .right p{
+//     margin-top: 20px;
+	
+//     font-size: 20px;
+//     color: #686868;
+//     line-height: 1.5;
+// }
+
+
+
+.orderPage .allplace{
+	margin-top: 20px;
+	width: 750px;
+	padding-top: 30px;
+	background-color: #fff;
+}
+.orderPage .allplace .allplaceContent{
+	width: 100%;
+	height: 212px;
+	height: 190px;
+	// border-bottom: 1px solid #ddd;
+}
+
+.orderPage .allplace img{
+	width: 210px;
+	height: 160px;
+	float: left;
+}
+.orderPage .allplace .allplaceText{
+	float: left;
+	height: 160px;
+	margin-left: 10px;
+	position: relative;
+}
+.orderPage .allplace .allplaceText h2{
+	color: #282828;
+	font-size: 30px;
+}
+.orderPage .allplace .allplaceText p{
+	margin-top: 10px;
+	font-size: 26px;
+	color: #686868;
+}
+.orderPage .allplace .allplaceText h3{
+	font-size: 26px;
+	color: #ff9914;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+
+
+/*user部分*/ 
+.orderPage .userContent{
+	width: 690px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.orderPage .pageContainer>h2{
+	text-align: center;
+	margin-top: 20px;
+	font-size: 30px;
+	color: #282828;
+}
+.orderPage .pageContainer .userContent p{
+	height: 100px;
+	font-size: 24px;
+	color: #686868;
+	line-height: 100px;
+	padding-left: 20px;
+	border-bottom: 1px solid #ddd;
+}
+.orderPage .pageContainer .userContent textarea{
+	width: 100%;
+	height: 300px;
+	text-indent: 2em;
+	font-size: 26px;
+	padding-top: 15px;
+	border: none;
+}
+
+// 立即预定部分
+.testRerve{
+	width: 100%;
+}
+.orderPage .reserve{
+	height: 100px;
+	width: 100%;
+	background-color: #fff;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	border-top: 1px solid #ddd;
+}
+.orderPage .reserve .reserveLogo{
+	float: left;
+
+}
+.orderPage .reserve .reserveLogo span{
+	display: inline-block;
+	// margin-top: 10px;
+	margin: 10px 20px;
+}
+.orderPage .reserve .reserveLogo span:nth-child(1){
+	width: 56px;
+	height: 76px;
+	background: url('../images/place-details-page2_13.png') center center no-repeat;
+}
+.orderPage .reserve .reserveLogo span:nth-child(2){
+	width: 82px;
+	height: 76px;
+	background: url('../images/place-details-page2_16.png') center center no-repeat;
+}
+.orderPage .reserve .reserveLogo span:nth-child(3){
+	width: 44px;
+	height: 76px;
+	background: url('../images/place-details-page2_18.png') center center no-repeat;
+}
+.orderPage .reserve .reserveNow{
+	float: right;
+}
+.orderPage .reserve .reserveNow a{
+	display: block;	
+	height: 100px;
+	width: 200px;
+	line-height: 100px;
+	text-align: center;
+	background-color: #ff9914;
+	color: #fff;
+	font-size: 30px;
+	text-decoration: none;
+}
+
+

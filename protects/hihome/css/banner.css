@@ -1,0 +1,138 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+// html,body{
+// 	width: 100%;
+// }
+.pageContainer{
+	width: 710px;
+	margin: 0 auto;
+}
+.bannerPage{
+	height: 3000px;
+	background-color: #fff;
+}
+.bannerPage .headTitle{
+	width: 750px;
+	height: 80px;
+	background-color: #fff;
+	text-align: center;
+	border-bottom: 1px solid #aaa;
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1111;
+}
+.bannerPage .headTitle h2{
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 20px;
+	font-size: 34px;
+	color: #333;
+	text-decoration: none;
+}
+.bannerPage .headTitle a > span{
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 40px;
+	margin: 15px 0 0 20px;
+	background: url('../images/quyudingweitubiao_03.png') center center no-repeat;
+	background-size: 25px 40px;
+}
+.bannerPage .headTitle > span:last-child{
+	display: inline-block;
+	float: right;
+	width: 40px;
+	height: 40px;
+	margin: 15px 30px 0 0;
+	background: url('../images/banner-details-page_03.png') center center no-repeat;
+	background-size: 40px 40px;
+}
+.bannerPage .clearHeight{
+	height: 80px;
+}
+.bannerPage .place{
+	margin-top: 30px;
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid #dfdfdf;
+}
+.bannerPage .place > a > img{
+	width: 710px;
+	height: 360px;
+}
+.bannerPage .place h3{
+	font-size: 30px;
+	margin-top: 20px;
+}
+.bannerPage .place p i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 3px;
+	background: url('../images/banner-details-page_18.png') center center no-repeat;
+}
+.bannerPage .place p i:last-child{
+	width: 58px;
+	height: 28px;
+	border-radius: 5px;
+	color: #dbdbdb;
+	background: #cbcbcb url('../images/banner-details-page_54.png') center center no-repeat;
+	background-size: 58px 28px;
+	position: relative;
+	top: 4px;
+}
+
+.bannerPage .place p.hotsiteOne_text{
+	font-size: 20px;
+	color: #686868;
+	margin-top: 20px;
+}
+.bannerPage .place h4 span{
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	position: relative;
+	top: 15px;
+	background: url('../images/banner-details-page_58.png') center center no-repeat;
+}
+.bannerPage .place h4{
+	font-size: 24px;
+	color: #686868;
+	margin-bottom: 30px;
+}
+.bannerPage .place h4 i{
+	display: inline-block;
+	font-style: normal;
+	width: 120px;
+	height: 40px;
+	color: #ff9914;
+	line-height: 40px;
+	font-size: 24px;
+	float: right;
+	position: relative;
+	top: 10px;
+}
+
+.bannerPage .place:last-of-type h4{
+	margin-bottom: 160px;
+}
+
+
+
+
+
