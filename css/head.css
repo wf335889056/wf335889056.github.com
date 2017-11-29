@@ -215,6 +215,7 @@ body {
 }
 
 .area .weather .today i {
+    font-style: normal;
     margin-left: 10px;
 }
 
