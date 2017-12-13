@@ -29,7 +29,7 @@
                 $scope.minTmp2 = $scope.data.HeWeather5[0].daily_forecast[2].tmp.min;
                 $scope.days = [
                     {
-                        title: '今天:',
+                        title: '明天:',
                         weather: $scope.weather1,
                         tmp: $scope.minTmp1 + '~' + $scope.maxTmp1 + '℃'
                     },
